@@ -1,0 +1,2303 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qurdits Kelas VIII - Pertemuan 2: QS. Al-Baqarah [2]: 254 | Kurikulum Berbasis Cinta</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Plus Jakarta Sans (UI), Amiri & Scheherazade New (Arabic), JetBrains Mono (Code/Meta) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tone.js for Apple-like Subtle UI Sound Effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            950: '#0a1628',
+                            900: '#132a4a',
+                            800: '#1e3f6e',
+                            700: '#26538d',
+                        },
+                        steel: {
+                            600: '#3569a8',
+                            500: '#4a85c5',
+                            400: '#72a5db',
+                            300: '#9ec4eb',
+                            200: '#cbe0f6',
+                            100: '#e8f2fc',
+                            50: '#f4f8fd',
+                        },
+                        love: {
+                            500: '#e11d48',
+                            100: '#ffe4e6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        arabic: ['"Scheherazade New"', '"Amiri"', 'serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* ==========================================================================
+           CUSTOM CSS: APPLE MOTION KIT & GEOMETRIC CORPORATE TEMPLATE STYLING
+           ========================================================================== */
+        :root {
+            --apple-spring: cubic-bezier(0.22, 1, 0.36, 1);
+            --apple-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --apple-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        body {
+            background-color: #0a1628;
+            color: #132a4a;
+            overflow: hidden;
+            user-select: none;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Geometric Clip Paths inspired by uploaded template */
+        .clip-chevron-left {
+            clip-path: polygon(0 0, 75% 0, 100% 50%, 75% 100%, 0 100%);
+        }
+        .clip-chevron-right {
+            clip-path: polygon(25% 0, 100% 0, 100% 100%, 25% 100%, 0 50%);
+        }
+        .clip-ribbon-right {
+            clip-path: polygon(0 0, 92% 0, 100% 50%, 92% 100%, 0 100%);
+        }
+        .clip-hexagon {
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        }
+        .clip-corner-tl {
+            clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);
+        }
+        .clip-corner-br {
+            clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+        .clip-slash-bar {
+            clip-path: polygon(18% 0, 100% 0, 82% 100%, 0% 100%);
+        }
+
+        /* Dotted matrix ornament from reference image */
+        .bg-dot-matrix {
+            background-image: radial-gradient(#26538d 1.75px, transparent 1.75px);
+            background-size: 10px 10px;
+        }
+
+        /* Slide Transition & Staggered Apple Motion */
+        .slide-view {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(0.95) translateY(20px);
+            filter: blur(8px);
+            transition: 
+                opacity 0.65s var(--apple-spring),
+                transform 0.65s var(--apple-spring),
+                filter 0.55s var(--apple-spring);
+            will-change: transform, opacity, filter;
+        }
+
+        .slide-view.active {
+            opacity: 1;
+            pointer-events: auto;
+            transform: scale(1) translateY(0);
+            filter: blur(0px);
+            z-index: 20;
+        }
+
+        .slide-view.prev-slide {
+            opacity: 0;
+            transform: scale(1.04) translateX(-40px);
+            filter: blur(6px);
+            z-index: 10;
+        }
+
+        /* Staggered Child Elements Animation */
+        .slide-view .stagger-item {
+            opacity: 0;
+            transform: translateY(24px) scale(0.98);
+            transition: 
+                opacity 0.7s var(--apple-spring),
+                transform 0.7s var(--apple-spring);
+        }
+
+        .slide-view.active .stagger-item {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .slide-view.active .delay-1 { transition-delay: 80ms; }
+        .slide-view.active .delay-2 { transition-delay: 160ms; }
+        .slide-view.active .delay-3 { transition-delay: 240ms; }
+        .slide-view.active .delay-4 { transition-delay: 320ms; }
+        .slide-view.active .delay-5 { transition-delay: 400ms; }
+        .slide-view.active .delay-6 { transition-delay: 480ms; }
+
+        /* Interactive Arabic Word Chip */
+        .arabic-word-chip {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.35rem 0.65rem;
+            margin: 0.25rem 0.18rem;
+            border-radius: 0.85rem;
+            border: 1.5px solid transparent;
+            background: rgba(244, 248, 253, 0.7);
+            transition: all 0.35s var(--apple-bounce);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .arabic-word-chip:hover {
+            transform: translateY(-6px) scale(1.07);
+            background: #ffffff;
+            border-color: #4a85c5;
+            box-shadow: 0 14px 28px -8px rgba(19, 42, 74, 0.18), 0 0 0 3px rgba(74, 133, 197, 0.15);
+            z-index: 10;
+        }
+
+        .arabic-word-chip.selected-word {
+            background: #132a4a;
+            color: #ffffff;
+            border-color: #4a85c5;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 16px 32px -6px rgba(19, 42, 74, 0.35);
+        }
+
+        .arabic-word-chip.selected-word .word-num {
+            background: #4a85c5;
+            color: #ffffff;
+        }
+
+        /* Custom Scrollbar inside Slide Content */
+        .slide-scroll::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .slide-scroll::-webkit-scrollbar-track {
+            background: rgba(203, 224, 246, 0.3);
+            border-radius: 9999px;
+        }
+        .slide-scroll::-webkit-scrollbar-thumb {
+            background: #4a85c5;
+            border-radius: 9999px;
+        }
+
+        /* Apple Glass Dock */
+        .apple-dock {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            box-shadow: 0 20px 40px -15px rgba(10, 22, 40, 0.25), 0 0 0 1px rgba(19, 42, 74, 0.08);
+        }
+
+        /* Subtle Pulse Animation for Interactive Prompts */
+        @keyframes subtlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.04); }
+        }
+        .animate-subtle-pulse {
+            animation: subtlePulse 2.8s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="h-screen w-screen flex flex-col justify-between bg-navy-950 p-2 sm:p-4 md:p-6 select-none overflow-hidden">
+
+    <!-- ==========================================================================
+         TOP BAR: GITHUB / VERCEL DEPLOYMENT METADATA & KURIKULUM BERBASIS CINTA
+         ========================================================================== -->
+    <header class="w-full max-w-[1440px] mx-auto flex flex-wrap items-center justify-between gap-2 px-3 py-1.5 mb-2 text-white/90 z-30">
+        <!-- Left: Repo & Branch Status -->
+        <div class="flex items-center gap-2 sm:gap-3">
+            <div class="flex items-center gap-1.5 bg-white/10 hover:bg-white/15 border border-white/15 px-3 py-1 rounded-full text-xs font-mono transition cursor-pointer" onclick="toggleOverviewModal()">
+                <i class="ph-fill ph-github-logo text-base text-steel-300"></i>
+                <span class="hidden sm:inline text-steel-200">azmi-huzaimi/</span><span class="font-semibold text-white">qurdits-kls8-bab2</span>
+                <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 px-1.5 py-0.2 rounded text-[10px] ml-1 flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> Vercel Ready
+                </span>
+            </div>
+
+            <div class="hidden lg:flex items-center gap-1.5 bg-rose-500/15 border border-rose-400/30 text-rose-200 px-3 py-1 rounded-full text-xs font-medium">
+                <i class="ph-fill ph-heart text-rose-400 animate-bounce"></i>
+                <span>Kurikulum Berbasis Cinta (KBC) &bull; MTs Al-Hidayah Bojongnangka</span>
+            </div>
+        </div>
+
+        <!-- Right: Teacher Quick Tools -->
+        <div class="flex items-center gap-2">
+            <!-- Class Timer (2 JP x 30 Menit = 60 Menit) -->
+            <button id="timerBtn" onclick="toggleClassTimer()" class="flex items-center gap-1.5 bg-white/10 hover:bg-white/20 border border-white/15 px-3 py-1 rounded-full text-xs font-mono transition" title="Klik untuk Mulai/Jeda Timer 2 JP (60 Menit)">
+                <i class="ph-bold ph-timer text-steel-300"></i>
+                <span id="classTimerDisplay">60:00</span>
+            </button>
+
+            <!-- Audio Sound Effect Toggle -->
+            <button id="sfxToggleBtn" onclick="toggleSFX()" class="flex items-center gap-1 bg-white/10 hover:bg-white/20 border border-white/15 px-2.5 py-1 rounded-full text-xs transition" title="Efek Suara Interaktif">
+                <i id="sfxIcon" class="ph-fill ph-speaker-high text-steel-300"></i>
+                <span class="hidden md:inline text-[11px]" id="sfxLabel">SFX On</span>
+            </button>
+
+            <!-- Slide Map / Grid Button -->
+            <button onclick="toggleOverviewModal()" class="flex items-center gap-1.5 bg-steel-600 hover:bg-steel-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-sm transition">
+                <i class="ph-bold ph-squares-four"></i>
+                <span class="hidden sm:inline">Daftar Slide</span>
+            </button>
+
+            <!-- Fullscreen Button -->
+            <button onclick="toggleFullScreen()" class="bg-white/10 hover:bg-white/20 border border-white/15 p-1.5 rounded-full text-white transition" title="Layar Penuh (F)">
+                <i class="ph-bold ph-corners-out text-sm"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         MAIN SLIDE DECK CANVAS (Corporate Blue & White Geometric Design)
+         ========================================================================== -->
+    <main class="relative w-full max-w-[1440px] flex-1 mx-auto bg-white rounded-2xl sm:rounded-3xl shadow-[0_25px_70px_-15px_rgba(0,0,0,0.65)] overflow-hidden border-2 border-steel-200/80">
+        
+        <!-- ======================================================================
+             PERSISTENT GEOMETRIC TEMPLATE ORNAMENTS (Match Reference Image)
+             ====================================================================== -->
+        <!-- Top-Left Geometric Ribbon -->
+        <div class="pointer-events-none absolute top-0 left-0 w-44 sm:w-64 h-7 sm:h-9 z-10 flex">
+            <div class="w-3/4 h-full bg-navy-900 clip-corner-tl"></div>
+            <div class="w-1/3 h-full bg-steel-500 -ml-8 clip-slash-bar opacity-90"></div>
+        </div>
+
+        <!-- Top-Right Geometric Corner & Dot Matrix -->
+        <div class="pointer-events-none absolute top-0 right-0 z-10 flex items-start">
+            <div class="w-12 h-24 bg-dot-matrix opacity-35 mr-4 mt-4 hidden sm:block"></div>
+            <div class="w-36 sm:w-56 h-12 sm:h-16 relative">
+                <div class="absolute top-0 right-0 w-full h-full bg-steel-200 clip-corner-br"></div>
+                <div class="absolute top-0 right-0 w-4/5 h-3/4 bg-navy-900 clip-corner-br"></div>
+                <div class="absolute top-0 right-16 w-8 h-full bg-steel-500 clip-slash-bar"></div>
+            </div>
+        </div>
+
+        <!-- Bottom-Left Subtle Geometric Accent -->
+        <div class="pointer-events-none absolute bottom-0 left-0 z-10 flex items-end">
+            <div class="w-40 sm:w-60 h-6 sm:h-8 bg-steel-200 clip-corner-tl"></div>
+            <div class="w-24 sm:w-36 h-4 sm:h-6 bg-steel-500 -ml-10 clip-slash-bar"></div>
+        </div>
+
+        <!-- Bottom-Right Geometric Ribbon -->
+        <div class="pointer-events-none absolute bottom-0 right-0 w-52 sm:w-80 h-7 sm:h-9 z-10 flex justify-end">
+            <div class="w-1/4 h-full bg-steel-400 -mr-6 clip-slash-bar z-10"></div>
+            <div class="w-3/4 h-full bg-navy-900 clip-corner-br"></div>
+        </div>
+
+        <!-- Subtle Background Watermark Circle Lines -->
+        <div class="pointer-events-none absolute -bottom-24 -left-24 w-72 h-72 rounded-full border-[18px] border-steel-100/70 z-0"></div>
+        <div class="pointer-events-none absolute -top-20 right-1/3 w-48 h-48 rounded-full border-[12px] border-steel-50 z-0"></div>
+
+        <!-- ======================================================================
+             SLIDE 1: COVER SLIDE (Layout 1: Hero Title + Right Geometric Frame)
+             ====================================================================== -->
+        <section class="slide-view active" data-slide="0" data-title="Sampul Pertemuan Ke-2">
+            <div class="w-full h-full grid grid-cols-1 lg:grid-cols-12 items-center px-6 sm:px-12 lg:px-16 py-10 gap-8 relative z-20 overflow-y-auto slide-scroll">
+                
+                <!-- Left Column (7 Cols) -->
+                <div class="lg:col-span-7 flex flex-col justify-center space-y-5">
+                    <!-- Brand / Institution Header -->
+                    <div class="stagger-item delay-1 flex flex-wrap items-center gap-3">
+                        <div class="flex items-center gap-2 bg-navy-900 text-white px-3.5 py-1.5 rounded-xl shadow-sm">
+                            <i class="ph-fill ph-book-open-text text-steel-300 text-lg"></i>
+                            <span class="text-xs font-bold tracking-wider uppercase">Al-Qur'an Hadis &bull; Kelas VIII</span>
+                        </div>
+                        <div class="flex items-center gap-1.5 bg-rose-50 border border-rose-200 text-rose-700 px-3 py-1.5 rounded-xl text-xs font-bold">
+                            <i class="ph-fill ph-heart text-rose-500"></i>
+                            <span>Kurikulum Berbasis Cinta</span>
+                        </div>
+                        <span class="text-xs font-mono text-steel-600 bg-steel-100 px-2.5 py-1 rounded-lg font-semibold">Pertemuan Ke-2 dari 5 (2 JP &times; 30 Menit)</span>
+                    </div>
+
+                    <!-- Main Title (Matching "BUDGET PROPOSAL" Bold Typography) -->
+                    <div class="stagger-item delay-2 space-y-2">
+                        <p class="text-steel-600 font-extrabold tracking-widest uppercase text-xs sm:text-sm">BAB 2: INFAK DAN SEDEKAH DI JALAN ALLAH SWT</p>
+                        <h1 class="text-3xl sm:text-5xl xl:text-6xl font-extrabold text-navy-900 leading-[1.08] tracking-tight uppercase">
+                            BERSEGERA BERINFAK <br/>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-navy-800 via-steel-600 to-steel-500">SEBELUM HARI KIAMAT</span>
+                        </h1>
+                    </div>
+
+                    <!-- Subtitle & Verse Highlight -->
+                    <p class="stagger-item delay-3 text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl">
+                        Kajian Mendalam <strong class="text-navy-900">QS. Al-Baqarah [2]: 254</strong> — Menumbuhkan kesadaran cinta kepada Allah dan sesama manusia dengan menyegerakan amal kebaikan sebelum datang hari di mana harta, jual beli, dan koneksi tak lagi berguna.
+                    </p>
+
+                    <!-- Interactive Action CTA -->
+                    <div class="stagger-item delay-4 flex flex-wrap items-center gap-3 pt-1">
+                        <button onclick="nextSlide()" class="group bg-navy-900 hover:bg-navy-800 text-white px-6 py-3.5 rounded-2xl font-bold text-sm flex items-center gap-3 shadow-lg shadow-navy-900/20 transition-all hover:scale-[1.02] active:scale-95">
+                            <span>Mulai Pembelajaran</span>
+                            <i class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                        <button onclick="goToSlide(4)" class="bg-steel-100 hover:bg-steel-200 text-navy-900 border border-steel-300 px-5 py-3.5 rounded-2xl font-bold text-sm flex items-center gap-2 transition-all hover:scale-[1.02]">
+                            <i class="ph-fill ph-sparkle text-steel-600"></i>
+                            <span>Langsung ke Ayat Interaktif</span>
+                        </button>
+                    </div>
+
+                    <!-- Presenter Metadata Footer (Matching "Presented by / Presented to") -->
+                    <div class="stagger-item delay-5 pt-4 border-t border-slate-200 grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-2xl">
+                        <div>
+                            <p class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Guru Praktikan / Pengajar</p>
+                            <p class="text-sm font-bold text-navy-900">Muhammad Azmi Huzaimi</p>
+                            <p class="text-[11px] text-steel-600 font-mono">NIM: 23110251 &bull; UIKH Cipasung</p>
+                        </div>
+                        <div>
+                            <p class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Satuan Pendidikan</p>
+                            <p class="text-sm font-bold text-navy-900">MTs Al-Hidayah</p>
+                            <p class="text-[11px] text-steel-600">Bojongnangka, Tasikmalaya</p>
+                        </div>
+                        <div class="col-span-2 sm:col-span-1">
+                            <p class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Guru Pamong</p>
+                            <p class="text-sm font-bold text-navy-900">Ilham Syafaat, S.Pd.I</p>
+                            <p class="text-[11px] text-steel-600">Fase D &bull; Semester Ganjil</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column (5 Cols) - Geometric Hex/Chevron Frame like Reference Slide 1 -->
+                <div class="lg:col-span-5 stagger-item delay-3 flex items-center justify-center relative">
+                    <div class="relative w-full max-w-md aspect-[4/3.6] flex items-center justify-center">
+                        <!-- Outer Navy Chevron Frame -->
+                        <div class="absolute inset-0 bg-navy-900 clip-hexagon transform rotate-6 scale-105 opacity-95 shadow-2xl"></div>
+                        <!-- Middle Steel Chevron Frame -->
+                        <div class="absolute inset-2 bg-steel-500 clip-hexagon transform -rotate-3"></div>
+                        <!-- Inner White Card Content -->
+                        <div class="relative w-[88%] h-[88%] bg-gradient-to-br from-navy-900 via-navy-800 to-steel-600 clip-hexagon flex flex-col items-center justify-center text-center p-6 text-white shadow-inner">
+                            <div class="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-md flex items-center justify-center mb-3 border border-white/25">
+                                <i class="ph-fill ph-hand-heart text-3xl text-steel-200"></i>
+                            </div>
+                            <p class="font-arabic text-2xl sm:text-3xl text-steel-100 mb-2 leading-relaxed" dir="rtl">
+                                يَا أَيُّهَا الَّذِينَ آمَنُوا أَنْفِقُوا مِمَّا رَزَقْنَاكُمْ
+                            </p>
+                            <p class="text-xs text-steel-200 italic max-w-xs">
+                                "Wahai orang-orang yang beriman! Infakkanlah sebagian dari rezeki yang telah Kami berikan kepadamu..."
+                            </p>
+                            <span class="mt-3 px-3 py-1 rounded-full bg-white/15 text-[11px] font-mono tracking-wider uppercase border border-white/20">
+                                QS. Al-Baqarah [2]: 254
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             SLIDE 2: KEGIATAN PENDAHULUAN (Asmaul Husna, Presensi & Apersepsi)
+             (Layout 2: Left Geometric Frame + Right Numbered List 01-04)
+             ====================================================================== -->
+        <section class="slide-view" data-slide="1" data-title="Pendahuluan & Apersepsi">
+            <div class="w-full h-full grid grid-cols-1 lg:grid-cols-12 items-center px-6 sm:px-12 lg:px-16 py-10 gap-8 relative z-20 overflow-y-auto slide-scroll">
+                
+                <!-- Left Column (5 Cols): Interactive Readiness & Asmaul Husna Card -->
+                <div class="lg:col-span-5 stagger-item delay-1 flex flex-col justify-between bg-gradient-to-br from-navy-900 via-navy-800 to-steel-600 text-white rounded-3xl p-6 sm:p-7 shadow-xl relative overflow-hidden">
+                    <div class="absolute -right-12 -bottom-12 w-48 h-48 rounded-full border-[16px] border-white/10"></div>
+                    
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-white/15 text-xs font-bold uppercase tracking-wider">Tahap 1 &bull; Pendahuluan</span>
+                            <span class="font-mono text-xs text-steel-200">10 Menit Awal</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold mb-1">Kesiapan Hati & Dzikir</h3>
+                        <p class="text-xs text-steel-200 mb-5">Membuka ruang kelas dengan penuh cinta, senyum tulus, dan lantunan Asmaul Husna.</p>
+
+                        <!-- Interactive Asmaul Husna Card Relevant to Infaq -->
+                        <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 mb-4">
+                            <p class="text-[11px] uppercase tracking-wider text-steel-200 font-semibold mb-2">Asmaul Husna Pilihan Hari Ini (Klik untuk Tadabbur):</p>
+                            <div class="grid grid-cols-3 gap-2 text-center">
+                                <button onclick="showAsmaulInfo('Ar-Razzaq', 'الْرَّزَّاقُ', 'Maha Pemberi Rezeki', 'Allah yang menciptakan dan membagikan rezeki kepada seluruh makhluk-Nya. Mengingatkan kita bahwa harta di tangan kita adalah titipan-Nya.')" class="bg-white/10 hover:bg-white/25 p-2.5 rounded-xl transition group">
+                                    <p class="font-arabic text-xl text-steel-200 group-hover:scale-110 transition-transform">الْرَّزَّاقُ</p>
+                                    <p class="text-xs font-bold mt-1">Ar-Razzaq</p>
+                                </button>
+                                <button onclick="showAsmaulInfo('Al-Ghaniyy', 'الْغَنِيُّ', 'Maha Kaya', 'Allah tidak membutuhkan apa pun dari hamba-Nya. Ketika kita berinfak, manfaatnya kembali untuk kebaikan diri kita sendiri.')" class="bg-white/10 hover:bg-white/25 p-2.5 rounded-xl transition group">
+                                    <p class="font-arabic text-xl text-steel-200 group-hover:scale-110 transition-transform">الْغَنِيُّ</p>
+                                    <p class="text-xs font-bold mt-1">Al-Ghaniyy</p>
+                                </button>
+                                <button onclick="showAsmaulInfo('Al-Karim', 'الْكَرِيمُ', 'Maha Pemurah', 'Allah Maha Dermawan memberi tanpa diminta. Meneladani sifat Al-Karim melahirkan pribadi siswa yang gemar bersedekah.')" class="bg-white/10 hover:bg-white/25 p-2.5 rounded-xl transition group">
+                                    <p class="font-arabic text-xl text-steel-200 group-hover:scale-110 transition-transform">الْكَرِيمُ</p>
+                                    <p class="text-xs font-bold mt-1">Al-Karim</p>
+                                </button>
+                            </div>
+                            <div id="asmaulDetailBox" class="mt-3 pt-3 border-t border-white/15 text-xs text-steel-100 leading-relaxed">
+                                <strong class="text-white">Ar-Razzaq (Maha Pemberi Rezeki):</strong> Klik salah satu Asmaul Husna di atas untuk merenungi maknanya bersama kelas.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Classroom Checklist -->
+                    <div class="space-y-2 pt-2">
+                        <p class="text-xs font-bold uppercase tracking-wider text-steel-200">Checklist Kesiapan Kelas VIII:</p>
+                        <label class="flex items-center gap-2.5 text-xs bg-white/10 px-3 py-2 rounded-xl cursor-pointer hover:bg-white/15 transition">
+                            <input type="checkbox" onchange="playTickSound()" class="w-4 h-4 accent-steel-400 rounded">
+                            <span>Menjawab salam guru & berdoa bersama dengan khusyuk</span>
+                        </label>
+                        <label class="flex items-center gap-2.5 text-xs bg-white/10 px-3 py-2 rounded-xl cursor-pointer hover:bg-white/15 transition">
+                            <input type="checkbox" onchange="playTickSound()" class="w-4 h-4 accent-steel-400 rounded">
+                            <span>Presensi kehadiran, kerapihan seragam & kebersihan kelas</span>
+                        </label>
+                        <label class="flex items-center gap-2.5 text-xs bg-white/10 px-3 py-2 rounded-xl cursor-pointer hover:bg-white/15 transition">
+                            <input type="checkbox" onchange="playTickSound()" class="w-4 h-4 accent-steel-400 rounded">
+                            <span>Mushaf Al-Qur'an & buku catatan Qurdits siap di atas meja</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Right Column (7 Cols): Numbered Steps 01-04 like Reference Slide 2 "INTRODUCTION" -->
+                <div class="lg:col-span-7 space-y-5">
+                    <div class="stagger-item delay-2">
+                        <span class="text-xs font-extrabold tracking-widest uppercase text-steel-600">KEGIATAN PENDAHULUAN &bull; APERSEPSI</span>
+                        <h2 class="text-2xl sm:text-4xl font-extrabold text-navy-900 tracking-tight uppercase mt-1">
+                            PENGANTAR &amp; REVIEW MATERI
+                        </h2>
+                        <p class="text-sm text-slate-600 mt-1">
+                            Mengaitkan materi Pertemuan Ke-1 (<span class="font-semibold text-navy-900">QS. Al-Fajr: 15-18</span>) menuju kesadaran manajemen waktu amal di Pertemuan Ke-2.
+                        </p>
+                    </div>
+
+                    <!-- Vertical Connected Timeline 01 - 04 -->
+                    <div class="space-y-3.5 relative before:absolute before:top-6 before:bottom-6 before:left-6 before:w-0.5 before:bg-steel-200">
+                        
+                        <!-- Item 01 -->
+                        <div class="stagger-item delay-2 relative flex items-start gap-4 bg-steel-50/80 hover:bg-steel-100/80 border border-steel-200 p-4 rounded-2xl transition">
+                            <div class="w-12 h-12 rounded-full bg-navy-900 text-white font-extrabold text-sm flex items-center justify-center shrink-0 shadow-md z-10">01</div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-sm sm:text-base">Review Pertemuan 1: Hakikat Rezeki (QS. Al-Fajr: 15-18)</h4>
+                                <p class="text-xs sm:text-sm text-slate-600 mt-0.5">Kekayaan dan kemiskinan bukanlah ukuran kemuliaan atau kehinaan mutlak, melainkan <strong class="text-navy-900">instrumen ujian (ibtila')</strong> kesyukuran dan kesabaran serta kepedulian pada anak yatim.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 02 -->
+                        <div class="stagger-item delay-3 relative flex items-start gap-4 bg-steel-50/80 hover:bg-steel-100/80 border border-steel-200 p-4 rounded-2xl transition">
+                            <div class="w-12 h-12 rounded-full bg-steel-600 text-white font-extrabold text-sm flex items-center justify-center shrink-0 shadow-md z-10">02</div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-sm sm:text-base">Pertanyaan Pemantik Utama Pertemuan 2</h4>
+                                <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+                                    <em>"Kapan batas waktu kita boleh beramal saleh? Jika kita meninggal dunia, apakah saldo tabungan di bank, rumah megah, atau koneksi pejabat dapat menolong kita di akhirat?"</em>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 03 -->
+                        <div class="stagger-item delay-4 relative flex items-start gap-4 bg-steel-50/80 hover:bg-steel-100/80 border border-steel-200 p-4 rounded-2xl transition">
+                            <div class="w-12 h-12 rounded-full bg-navy-900 text-white font-extrabold text-sm flex items-center justify-center shrink-0 shadow-md z-10">03</div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-sm sm:text-base">Manajemen Waktu Hidup & Perspektif Cinta</h4>
+                                <p class="text-xs sm:text-sm text-slate-600 mt-0.5">Bukti cinta sejati seorang mukmin kepada dirinya sendiri adalah menyiapkan bekal terbaik sebelum datang hari pembalasan yang tidak bisa ditawar lagi.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 04 -->
+                        <div class="stagger-item delay-5 relative flex items-start gap-4 bg-rose-50/70 hover:bg-rose-100/60 border border-rose-200 p-4 rounded-2xl transition">
+                            <div class="w-12 h-12 rounded-full bg-rose-600 text-white font-extrabold text-sm flex items-center justify-center shrink-0 shadow-md z-10">04</div>
+                            <div class="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                                <div>
+                                    <h4 class="font-bold text-navy-900 text-sm sm:text-base">Cek Diagnostik Kesiapan Belajar</h4>
+                                    <p class="text-xs text-slate-600">Apakah kalian pernah ragu menyisihkan uang saku Rp1.000 karena takut habis?</p>
+                                </div>
+                                <button onclick="openDiagnosticModal()" class="shrink-0 bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold px-3.5 py-2 rounded-xl transition">
+                                    Isi Polling Cepat
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             SLIDE 3: TUJUAN PEMBELAJARAN, PPP, PPRA & KURIKULUM BERBASIS CINTA
+             (Layout 3: 4 Hexagons + 3 Circular Objectives like Reference Slides 3 & 5)
+             ====================================================================== -->
+        <section class="slide-view" data-slide="2" data-title="Tujuan Pembelajaran & Profil Pelajar">
+            <div class="w-full h-full flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-10 relative z-20 overflow-y-auto slide-scroll">
+                
+                <!-- Header Centered -->
+                <div class="stagger-item delay-1 text-center max-w-3xl mx-auto mb-7">
+                    <span class="text-xs font-extrabold tracking-widest uppercase text-steel-600">KOMPETENSI INTI &bull; PERTEMUAN KE-2</span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-navy-900 uppercase tracking-tight mt-1">
+                        TUJUAN PEMBELAJARAN &amp; KARAKTER CINTA
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                        Empat target utama yang akan kita capai bersama dalam kajian <strong class="text-navy-900">QS. Al-Baqarah [2]: 254</strong> hari ini.
+                    </p>
+                </div>
+
+                <!-- 4 Hexagon Cards (Inspired by "BUDGET ALLOCATION" Slide 5 in Reference) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-7">
+                    
+                    <!-- TP 1 -->
+                    <div class="stagger-item delay-2 bg-steel-50/90 hover:bg-white border border-steel-200 rounded-2xl p-5 text-center shadow-sm hover:shadow-xl transition-all group">
+                        <div class="w-20 h-20 mx-auto mb-4 bg-navy-900 group-hover:bg-steel-600 transition-colors clip-hexagon flex items-center justify-center text-white shadow-md">
+                            <i class="ph-duotone ph-microphone-stage text-3xl"></i>
+                        </div>
+                        <span class="text-[11px] font-mono font-bold text-steel-600 uppercase">Tujuan 01 &bull; Literasi Qira'ah</span>
+                        <h3 class="font-extrabold text-navy-900 text-base mt-1 mb-2">Fasih Membaca &amp; Mufradat</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Mampu membaca <strong>QS. Al-Baqarah [2]: 254</strong> dengan fasih sesuai kaidah tajwid serta memahami arti mufradat perkata dengan tepat.
+                        </p>
+                    </div>
+
+                    <!-- TP 2 -->
+                    <div class="stagger-item delay-3 bg-steel-50/90 hover:bg-white border border-steel-200 rounded-2xl p-5 text-center shadow-sm hover:shadow-xl transition-all group">
+                        <div class="w-20 h-20 mx-auto mb-4 bg-steel-600 group-hover:bg-navy-900 transition-colors clip-hexagon flex items-center justify-center text-white shadow-md">
+                            <i class="ph-duotone ph-hourglass-high text-3xl"></i>
+                        </div>
+                        <span class="text-[11px] font-mono font-bold text-steel-600 uppercase">Tujuan 02 &bull; Tadabbur Akhirat</span>
+                        <h3 class="font-extrabold text-navy-900 text-base mt-1 mb-2">Peringatan Hari Kiamat</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Menelaah peringatan Allah Swt. mengenai datangnya hari kiamat di mana <strong>harta, jual beli, dan koneksi kerabat</strong> tidak lagi bermanfaat.
+                        </p>
+                    </div>
+
+                    <!-- TP 3 -->
+                    <div class="stagger-item delay-4 bg-steel-50/90 hover:bg-white border border-steel-200 rounded-2xl p-5 text-center shadow-sm hover:shadow-xl transition-all group">
+                        <div class="w-20 h-20 mx-auto mb-4 bg-navy-900 group-hover:bg-steel-600 transition-colors clip-hexagon flex items-center justify-center text-white shadow-md">
+                            <i class="ph-duotone ph-coins text-3xl"></i>
+                        </div>
+                        <span class="text-[11px] font-mono font-bold text-steel-600 uppercase">Tujuan 03 &bull; Refleksi Remaja</span>
+                        <h3 class="font-extrabold text-navy-900 text-base mt-1 mb-2">Peluang vs Hambatan Infak</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Mengidentifikasi hambatan (takut miskin, boros, gengsi) dan peluang dalam membiasakan infak &amp; sedekah sejak usia remaja MTs.
+                        </p>
+                    </div>
+
+                    <!-- TP 4 -->
+                    <div class="stagger-item delay-5 bg-steel-50/90 hover:bg-white border border-steel-200 rounded-2xl p-5 text-center shadow-sm hover:shadow-xl transition-all group">
+                        <div class="w-20 h-20 mx-auto mb-4 bg-steel-600 group-hover:bg-navy-900 transition-colors clip-hexagon flex items-center justify-center text-white shadow-md">
+                            <i class="ph-duotone ph-shield-warning text-3xl"></i>
+                        </div>
+                        <span class="text-[11px] font-mono font-bold text-steel-600 uppercase">Tujuan 04 &bull; Evaluasi Moral</span>
+                        <h3 class="font-extrabold text-navy-900 text-base mt-1 mb-2">Menjauhi Zalim &amp; Kikir</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Menyimpulkan bahaya sifat <strong>zalim dan bakhil (kikir)</strong> bagi masa depan akhirat serta menumbuhkan karakter dermawan.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Bottom Row: Integrasi PPP, PPRA, dan Kurikulum Berbasis Cinta -->
+                <div class="stagger-item delay-6 grid grid-cols-1 md:grid-cols-3 gap-4 bg-navy-900 text-white p-4 sm:p-5 rounded-2xl shadow-lg">
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-steel-500/30 border border-steel-400/40 flex items-center justify-center shrink-0 text-steel-200">
+                            <i class="ph-fill ph-star text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-extrabold uppercase tracking-wider text-steel-300">Profil Pelajar Pancasila (PPP)</h4>
+                            <p class="text-xs text-slate-200 mt-0.5">Beriman &amp; Bertakwa (mensyukuri rezeki), <strong>Gotong Royong</strong> (peduli dhuafa), serta <strong>Bernalar Kritis</strong> menganalisis kandungan ayat.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-steel-500/30 border border-steel-400/40 flex items-center justify-center shrink-0 text-steel-200">
+                            <i class="ph-fill ph-globe-hemisphere-east text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-extrabold uppercase tracking-wider text-steel-300">Rahmatan Lil 'Alamin (PPRA)</h4>
+                            <p class="text-xs text-slate-200 mt-0.5"><strong>Ta'addub</strong> (santun berbagi), <strong>Tawassuth</strong> (moderat: tidak kikir &amp; tidak boros), dan <strong>Tasamuh</strong> (empati sosial).</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-rose-500/30 border border-rose-400/40 flex items-center justify-center shrink-0 text-rose-300">
+                            <i class="ph-fill ph-heart text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-extrabold uppercase tracking-wider text-rose-300">Pilar Kurikulum Berbasis Cinta</h4>
+                            <p class="text-xs text-slate-200 mt-0.5"><strong>Mahabbah Fillah:</strong> Mengubah motivasi sedekah dari sekadar gugur kewajiban menjadi ekspresi cinta kepada Allah &amp; sesama makhluk.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             SLIDE 4: LITERASI KONSEP & KONTEKS HISTORIS MADINAH
+             (Makna Infak vs Sedekah vs Zakat + Persaudaraan Muhajirin & Anshar)
+             ====================================================================== -->
+        <section class="slide-view" data-slide="3" data-title="Konsep Infak & Konteks Historis">
+            <div class="w-full h-full grid grid-cols-1 lg:grid-cols-12 items-center px-6 sm:px-12 lg:px-16 py-10 gap-7 relative z-20 overflow-y-auto slide-scroll">
+                
+                <!-- Left Column (6 Cols): Etimologi, Terminologi & Perbedaan -->
+                <div class="lg:col-span-6 space-y-4">
+                    <div class="stagger-item delay-1">
+                        <span class="text-xs font-extrabold tracking-widest uppercase text-steel-600">KEGIATAN INTI 1 &bull; LITERASI KONSEP</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-navy-900 uppercase tracking-tight mt-1">
+                            MEMAHAMI INFAK, SEDEKAH &amp; ZAKAT
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                            Sebelum menyelami QS. Al-Baqarah [2]: 254, mari bedakan tiga istilah filantropi Islam agar tidak tertukar.
+                        </p>
+                    </div>
+
+                    <!-- Interactive Tabs for Infak / Sedekah / Zakat -->
+                    <div class="stagger-item delay-2 bg-steel-50 border border-steel-200 rounded-2xl p-4">
+                        <div class="grid grid-cols-3 gap-2 mb-4 bg-white p-1.5 rounded-xl border border-steel-200">
+                            <button onclick="switchConceptTab('infak')" id="tabBtn-infak" class="concept-tab-btn bg-navy-900 text-white font-bold text-xs py-2.5 rounded-lg transition">
+                                1. INFAK
+                            </button>
+                            <button onclick="switchConceptTab('sedekah')" id="tabBtn-sedekah" class="concept-tab-btn text-navy-900 hover:bg-steel-100 font-bold text-xs py-2.5 rounded-lg transition">
+                                2. SEDEKAH
+                            </button>
+                            <button onclick="switchConceptTab('zakat')" id="tabBtn-zakat" class="concept-tab-btn text-navy-900 hover:bg-steel-100 font-bold text-xs py-2.5 rounded-lg transition">
+                                3. ZAKAT
+                            </button>
+                        </div>
+
+                        <div id="conceptTabContent" class="bg-white rounded-xl p-4 border border-steel-200/80 space-y-2.5">
+                            <!-- Default Content: Infak -->
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-mono font-bold text-steel-600 uppercase">Akar Kata: Anfaqa - Yunfiqu (أَنْفَقَ - يُنْفِقُ)</span>
+                                <span class="bg-emerald-100 text-emerald-800 text-[11px] font-bold px-2.5 py-0.5 rounded-full">Fokus Materi Materi</span>
+                            </div>
+                            <h4 class="text-base font-extrabold text-navy-900">Pengertian Infak Secara Bahasa &amp; Syariat</h4>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Secara bahasa bermakna <strong>membelanjakan atau membiayai</strong> suatu urusan. Secara istilah syariat adalah mengeluarkan sebagian harta benda (materi) untuk kepentingan kebaikan yang diperintahkan Allah Swt. di luar kewajiban zakat.
+                            </p>
+                            <div class="grid grid-cols-2 gap-2 pt-2 text-xs">
+                                <div class="bg-steel-50 p-2.5 rounded-lg border border-steel-200">
+                                    <span class="font-bold text-navy-900 block">Tanpa Nishab &amp; Haul</span>
+                                    <span class="text-slate-600">Boleh dikeluarkan kapan saja, baik saat lapang maupun sempit (uang saku Rp1.000 pun sah!).</span>
+                                </div>
+                                <div class="bg-steel-50 p-2.5 rounded-lg border border-steel-200">
+                                    <span class="font-bold text-navy-900 block">Bentuk: Materi / Harta</span>
+                                    <span class="text-slate-600">Fokus pada pembelanjaan harta halal untuk keluarga, masjid, madrasah, atau dhuafa.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quote Pemahaman Bermakna -->
+                    <div class="stagger-item delay-3 bg-navy-900 text-white p-4 rounded-2xl flex items-center gap-3.5 shadow-md">
+                        <div class="w-11 h-11 rounded-xl bg-steel-500/30 flex items-center justify-center shrink-0 text-steel-200">
+                            <i class="ph-fill ph-lightbulb-filament text-2xl"></i>
+                        </div>
+                        <p class="text-xs leading-relaxed text-steel-100">
+                            <strong class="text-white">Pemahaman Bermakna:</strong> Menginfakkan rezeki yang halal di jalan Allah <u>tidak akan mengurangi kekayaan</u>, melainkan menjadi tabungan abadi yang menyelamatkan di akhirat.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Column (6 Cols): Konteks Historis Masyarakat Madinah (Muhajirin & Anshar) -->
+                <div class="lg:col-span-6 space-y-4">
+                    <div class="stagger-item delay-3 bg-gradient-to-br from-steel-50 to-white border-2 border-steel-200 rounded-3xl p-6 shadow-sm relative overflow-hidden">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-navy-900 text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Konteks Historis &amp; Sosial Ayat</span>
+                            <span class="text-xs font-mono text-steel-600 font-semibold">Surah Madaniyah</span>
+                        </div>
+
+                        <h3 class="text-xl font-extrabold text-navy-900 mb-2">Teladan Cinta Masyarakat Madinah: Muhajirin &amp; Anshar</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                            Surah Al-Baqarah ayat 254 turun di Madinah untuk membangun fondasi solidaritas sosial umat Islam. Saat itu, kaum <strong>Muhajirin</strong> tiba di Madinah tanpa membawa harta benda, dan kaum <strong>Anshar</strong> menyambut mereka dengan kedermawanan luar biasa karena cinta kepada Allah.
+                        </p>
+
+                        <!-- Visual Comparison Cards (Ribbon style like Reference Slide 8) -->
+                        <div class="space-y-3">
+                            <div class="flex items-center bg-white border border-steel-200 rounded-2xl p-3 shadow-sm">
+                                <div class="w-12 h-12 bg-navy-900 text-white clip-hexagon flex items-center justify-center shrink-0 mr-3">
+                                    <i class="ph-fill ph-users-three text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs sm:text-sm font-extrabold text-navy-900">Solidaritas Tanpa Pamrih</h4>
+                                    <p class="text-xs text-slate-600">Kaum Anshar rela berbagi tempat tinggal, kebun kurma, dan hasil panen demi menolong saudara seiman dan membiayai perjuangan di jalan Allah (fi sabilillah).</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center bg-white border border-steel-200 rounded-2xl p-3 shadow-sm">
+                                <div class="w-12 h-12 bg-steel-600 text-white clip-hexagon flex items-center justify-center shrink-0 mr-3">
+                                    <i class="ph-fill ph-arrows-In-line-horizontal text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs sm:text-sm font-extrabold text-navy-900">Kontras dengan Budaya Jahiliyah</h4>
+                                    <p class="text-xs text-slate-600">Masyarakat Jahiliyah mengira jika mereka bersalah, mereka bisa selamat lewat <strong>tebusan harta (bay')</strong>, <strong>kronisme/teman dekat (khullah)</strong>, atau <strong>perantara berhala (syafa'ah)</strong>. Ayat 254 mematahkan anggapan ini!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mini Reflection Question -->
+                        <div class="mt-4 pt-3 border-t border-steel-200 flex items-center justify-between text-xs">
+                            <span class="text-navy-900 font-bold"><i class="ph-fill ph-chat-circle-text text-steel-600 mr-1"></i> Pertanyaan Kelas:</span>
+                            <span class="text-slate-600 italic">"Siapa sahabat Anshar yang paling terkenal kedermawanannya?"</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             SLIDE 5: TILAWAH & BEDAH MUFRADAT PERKATA INTERAKTIF QS. AL-BAQARAH: 254
+             (EVERY SINGLE ARABIC WORD IS CLICKABLE WITH POP-UP MEANING & TAFSIR)
+             ====================================================================== -->
+        <section class="slide-view" data-slide="4" data-title="Ayat Interaktif: QS. Al-Baqarah 254">
+            <div class="w-full h-full flex flex-col justify-between px-4 sm:px-10 lg:px-14 py-8 relative z-20 overflow-y-auto slide-scroll">
+                
+                <!-- Top Header & Controls -->
+                <div class="stagger-item delay-1 flex flex-wrap items-center justify-between gap-3 mb-3">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="bg-navy-900 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">Inti Pembelajaran &bull; Eksplorasi Ayat</span>
+                            <span class="bg-amber-100 text-amber-800 border border-amber-300 text-[11px] font-bold px-2.5 py-0.5 rounded-full animate-subtle-pulse">
+                                <i class="ph-fill ph-hand-tap mr-1"></i> Klik Setiap Kata Arab untuk Detail Arti &amp; Tajwid!
+                            </span>
+                        </div>
+                        <h2 class="text-xl sm:text-3xl font-extrabold text-navy-900 uppercase tracking-tight mt-1">
+                            QS. AL-BAQARAH [2]: AYAT 254 (INTERAKTIF PERKATA)
+                        </h2>
+                    </div>
+
+                    <!-- Interactive Tools for the Verse -->
+                    <div class="flex flex-wrap items-center gap-2">
+                        <button onclick="toggleInlineTranslation()" id="toggleTransBtn" class="bg-steel-100 hover:bg-steel-200 text-navy-900 border border-steel-300 px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
+                            <i class="ph-bold ph-translate text-steel-600"></i>
+                            <span id="toggleTransText">Sembunyikan Arti Bawah Kata</span>
+                        </button>
+                        <button onclick="playVerseTour()" id="tourBtn" class="bg-navy-900 hover:bg-navy-800 text-white px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm transition">
+                            <i class="ph-fill ph-play-circle text-steel-300 text-base"></i>
+                            <span id="tourBtnText">Simulasi Baca Perkata</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Main Interactive Arabic Canvas (21 Clickable Words of QS. Al-Baqarah: 254) -->
+                <div class="stagger-item delay-2 bg-gradient-to-b from-steel-50/90 to-white border-2 border-steel-200 rounded-3xl p-4 sm:p-6 shadow-inner">
+                    
+                    <!-- Basmalah Header -->
+                    <div class="text-center pb-3 mb-3 border-b border-steel-200/80 flex items-center justify-between">
+                        <span class="text-[11px] font-mono text-steel-600 bg-steel-100 px-2.5 py-1 rounded-lg">Juz 3 &bull; Surah Ke-2</span>
+                        <p class="font-arabic text-xl sm:text-2xl text-navy-900">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+                        <span class="text-[11px] font-mono text-steel-600 bg-steel-100 px-2.5 py-1 rounded-lg">21 Kosakata Interaktif</span>
+                    </div>
+
+                    <!-- Container of Clickable Arabic Words (RTL Direction) -->
+                    <div id="arabicVerseContainer" dir="rtl" class="flex flex-wrap justify-center items-center gap-y-2 py-2 text-center">
+                        <!-- Populated dynamically via JS from the 21-word database of QS. Al-Baqarah: 254 -->
+                    </div>
+
+                    <!-- Full Verse Translation Accordion / Bar -->
+                    <div class="mt-4 pt-3 border-t border-steel-200 bg-steel-50/70 rounded-2xl p-3.5 text-center">
+                        <p class="text-xs sm:text-sm text-navy-900 leading-relaxed">
+                            <strong class="text-steel-600 uppercase font-mono text-[11px] block mb-0.5">Terjemah Lengkap Kemenag RI:</strong>
+                            <em>"Wahai orang-orang yang beriman! Infakkanlah sebagian dari rezeki yang telah Kami berikan kepadamu sebelum datang hari ketika tidak ada lagi jual beli, tidak ada lagi persahabatan yang akrab, dan tidak ada lagi syafaat. Dan orang-orang kafir itulah orang-orang yang zalim."</em> <strong>(QS. Al-Baqarah [2]: 254)</strong>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Bottom Instant Inspector Panel (Shows active clicked word or prompts student) -->
+                <div id="wordInspectorBar" class="stagger-item delay-3 mt-3 bg-navy-900 text-white rounded-2xl p-4 shadow-lg flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center gap-4">
+                        <div id="inspectorArabicBadge" class="px-4 py-2 rounded-2xl bg-white/10 border border-white/20 font-arabic text-2xl sm:text-3xl text-steel-200 shrink-0">
+                            أَنْفِقُوا
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <span id="inspectorLatin" class="font-bold text-sm sm:text-base text-white">Anfiquu</span>
+                                <span id="inspectorTajwid" class="text-[11px] font-mono bg-steel-500/40 text-steel-200 px-2 py-0.5 rounded-md border border-steel-400/30">Ikhfa Haqiqi &amp; Mad Thabi'i</span>
+                            </div>
+                            <p id="inspectorMeaning" class="text-xs sm:text-sm text-steel-200 font-semibold mt-0.5">Artinya: "Infakkanlah / belanjakanlah oleh kalian!"</p>
+                            <p id="inspectorExplain" class="text-xs text-slate-300 mt-0.5">Fi'il Amr (kata kerja perintah) yang menunjukkan kesungguhan seruan Allah agar orang beriman bersegera menyisihkan hartanya untuk kebaikan.</p>
+                        </div>
+                    </div>
+                    <button onclick="openCurrentWordModal()" class="shrink-0 bg-steel-500 hover:bg-steel-400 text-white text-xs font-bold px-4 py-2.5 rounded-xl flex items-center gap-1.5 transition shadow">
+                        <i class="ph-bold ph-magnifying-glass-plus"></i>
+                        <span>Buka Pop-Up Detail Kata</span>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             SLIDE 6: ANALISIS TAFSIR & 3 REALITAS HARI KIAMAT
+             (Layout: 3 Circular Cards + Bar Chart Comparison like Reference Slides 3 & 4)
+             ====================================================================== -->
+        <section class="slide-view" data-slide="5" data-title="Analisis Tafsir: 3 Hal yang Gugur di Hari Kiamat">
+            <div class="w-full h-full grid grid-cols-1 lg:grid-cols-12 items-center px-6 sm:px-12 lg:px-16 py-10 gap-8 relative z-20 overflow-y-auto slide-scroll">
+                
+                <!-- Left Column (7 Cols): 3 Circular Pillars (Laa Bay'un, Walaa Khullah, Walaa Syafa'ah) -->
+                <div class="lg:col-span-7 space-y-5">
+                    <div class="stagger-item delay-1">
+                        <span class="text-xs font-extrabold tracking-widest uppercase text-steel-600">KEGIATAN INTI 2 &bull; ANALISIS TAFSIR</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-navy-900 uppercase tracking-tight mt-1">
+                            3 REALITAS HARI KIAMAT DALAM AYAT 254
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                            Mengapa Allah memerintahkan kita berinfak <strong>"sebelum datang hari itu"</strong>? Karena di akhirat kelak, 3 alat penyelamat duniawi ini tidak lagi berlaku:
+                        </p>
+                    </div>
+
+                    <!-- 3 Circular Pillar Cards (Matching "BUDGET OBJECTIVES" Slide 3 in Reference) -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        
+                        <!-- Pillar 1: Laa Bay'un Fiihi -->
+                        <div onclick="showTafsirDetail(0)" class="stagger-item delay-2 cursor-pointer bg-steel-50 hover:bg-white border-2 border-steel-200 hover:border-steel-500 rounded-2xl p-4 text-center transition-all shadow-sm hover:shadow-xl group">
+                            <div class="w-20 h-20 mx-auto rounded-full border-4 border-navy-900 bg-white flex flex-col items-center justify-center mb-3 group-hover:scale-105 transition-transform shadow">
+                                <span class="font-arabic text-lg font-bold text-navy-900">لَا بَيْعٌ فِيهِ</span>
+                            </div>
+                            <h3 class="font-extrabold text-navy-900 text-sm uppercase">1. Laa Bay'un Fiihi</h3>
+                            <p class="text-[11px] font-bold text-steel-600 mb-1.5">Tiada Jual Beli / Tebusan</p>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Meski seseorang memiliki emas sepenuh bumi di hari kiamat, tidak akan diterima untuk membeli surga atau menebus dirinya dari azab.
+                            </p>
+                        </div>
+
+                        <!-- Pillar 2: Walaa Khullah -->
+                        <div onclick="showTafsirDetail(1)" class="stagger-item delay-3 cursor-pointer bg-steel-50 hover:bg-white border-2 border-steel-200 hover:border-steel-500 rounded-2xl p-4 text-center transition-all shadow-sm hover:shadow-xl group">
+                            <div class="w-20 h-20 mx-auto rounded-full border-4 border-steel-600 bg-white flex flex-col items-center justify-center mb-3 group-hover:scale-105 transition-transform shadow">
+                                <span class="font-arabic text-lg font-bold text-navy-900">وَلَا خُلَّةٌ</span>
+                            </div>
+                            <h3 class="font-extrabold text-navy-900 text-sm uppercase">2. Walaa Khullah</h3>
+                            <p class="text-[11px] font-bold text-steel-600 mb-1.5">Tiada Koneksi Sahabat</p>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Tidak ada pertolongan teman dekat, "orang dalam", atau kerabat yang berbasis kepentingan duniawi, kecuali persahabatan karena takwa.
+                            </p>
+                        </div>
+
+                        <!-- Pillar 3: Walaa Syafa'ah -->
+                        <div onclick="showTafsirDetail(2)" class="stagger-item delay-4 cursor-pointer bg-steel-50 hover:bg-white border-2 border-steel-200 hover:border-steel-500 rounded-2xl p-4 text-center transition-all shadow-sm hover:shadow-xl group">
+                            <div class="w-20 h-20 mx-auto rounded-full border-4 border-navy-900 bg-white flex flex-col items-center justify-center mb-3 group-hover:scale-105 transition-transform shadow">
+                                <span class="font-arabic text-lg font-bold text-navy-900">وَلَا شَفَاعَةٌ</span>
+                            </div>
+                            <h3 class="font-extrabold text-navy-900 text-sm uppercase">3. Walaa Syafa'ah</h3>
+                            <p class="text-[11px] font-bold text-steel-600 mb-1.5">Tiada Syafaat Tanpa Izin-Nya</p>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Bagi orang kafir &amp; ingkar tidak ada syafaat sama sekali. Sedangkan bagi mukmin, syafaat Rasulullah hadir atas izin &amp; ridha Allah Swt.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- Penutup Ayat: Wal Kaafiruuna Humuzh-Zhaalimuun -->
+                    <div id="tafsirHighlightBox" class="stagger-item delay-5 bg-navy-900 text-white p-4 rounded-2xl border-l-4 border-steel-400">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="text-xs font-bold text-steel-300 uppercase">Puncak Peringatan Ayat (Khulashah):</span>
+                            <span class="font-arabic text-lg text-steel-200">وَالْكَافِرُونَ هُمُ الظَّالِمُونَ</span>
+                        </div>
+                        <p class="text-xs text-slate-200 leading-relaxed">
+                            <strong>Mengapa disebut Zalim?</strong> <em>Azh-Zulm</em> artinya meletakkan sesuatu bukan pada tempatnya. Orang yang menahan rezeki Allah dan enggan berinfak hingga mati hakikatnya <strong>menzalimi dirinya sendiri</strong> karena membiarkan dirinya masuk ke akhirat tanpa bekal pelindung.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Column (5 Cols): Bar Chart Comparison (Matching "REVENUE FORECAST" Slide 4 in Reference) -->
+                <div class="lg:col-span-5 stagger-item delay-3 bg-steel-50 border border-steel-200 rounded-3xl p-6 shadow-sm">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-[11px] font-mono font-bold text-steel-600 uppercase">Visualisasi Nilai Manfaat Harta</span>
+                        <div class="flex items-center gap-3 text-[11px] font-bold">
+                            <span class="flex items-center gap-1 text-steel-500"><span class="w-2.5 h-2.5 rounded-sm bg-steel-400"></span> Dunia</span>
+                            <span class="flex items-center gap-1 text-navy-900"><span class="w-2.5 h-2.5 rounded-sm bg-navy-900"></span> Akhirat</span>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-extrabold text-navy-900 uppercase mb-4">Kemanakah Perginya Harta Kita?</h3>
+
+                    <!-- Animated Bar Chart -->
+                    <div class="grid grid-cols-3 gap-4 items-end h-44 pt-6 px-3 bg-white rounded-2xl border border-steel-200 mb-4">
+                        <!-- Bar Group 1: Harta Ditumpuk Kikir -->
+                        <div class="flex flex-col items-center h-full justify-end">
+                            <div class="w-full flex items-end justify-center gap-1.5 h-full">
+                                <div class="w-6 bg-steel-400 rounded-t-md h-[75%] transition-all duration-700" title="Manfaat Dunia: 75%"></div>
+                                <div class="w-6 bg-rose-500 rounded-t-md h-[8%] transition-all duration-700" title="Bekal Akhirat: 0% (Menjadi Beban Hisab)"></div>
+                            </div>
+                            <span class="text-[10px] font-bold text-navy-900 text-center mt-2 leading-tight">Ditimbun Kikir<br/>(Bakhil)</span>
+                        </div>
+
+                        <!-- Bar Group 2: Konsumsi Pribadi -->
+                        <div class="flex flex-col items-center h-full justify-end">
+                            <div class="w-full flex items-end justify-center gap-1.5 h-full">
+                                <div class="w-6 bg-steel-400 rounded-t-md h-[85%] transition-all duration-700"></div>
+                                <div class="w-6 bg-navy-700 rounded-t-md h-[35%] transition-all duration-700"></div>
+                            </div>
+                            <span class="text-[10px] font-bold text-navy-900 text-center mt-2 leading-tight">Konsumsi Halal<br/>Secukupnya</span>
+                        </div>
+
+                        <!-- Bar Group 3: Diinfakkan di Jalan Allah -->
+                        <div class="flex flex-col items-center h-full justify-end">
+                            <div class="w-full flex items-end justify-center gap-1.5 h-full">
+                                <div class="w-6 bg-steel-400 rounded-t-md h-[90%] transition-all duration-700"></div>
+                                <div class="w-6 bg-navy-900 rounded-t-md h-[100%] transition-all duration-700 relative">
+                                    <span class="absolute -top-5 left-1/2 -translate-x-1/2 text-[10px] font-extrabold text-navy-900 bg-amber-300 px-1.5 rounded">Abadi!</span>
+                                </div>
+                            </div>
+                            <span class="text-[10px] font-bold text-navy-900 text-center mt-2 leading-tight">Infak &amp; Sedekah<br/>Ikhlas</span>
+                        </div>
+                    </div>
+
+                    <!-- Hadis Support -->
+                    <div class="space-y-2 text-xs text-slate-600">
+                        <div class="flex items-start gap-2.5 bg-white p-3 rounded-xl border border-steel-200">
+                            <i class="ph-fill ph-quotes text-steel-600 text-lg shrink-0 mt-0.5"></i>
+                            <p>
+                                <strong>Sabda Rasulullah Saw. (HR. Muslim):</strong> Manusia berkata, <em>"Hartaku, hartaku!"</em> Padahal hartamu yang sesungguhnya hanyalah apa yang kamu makan lalu habis, apa yang kamu pakai lalu usang, dan <strong>apa yang kamu sedekahkan lalu kekal menjadi tabungan akhiratmu.</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             SLIDE 7: INQUIRY & PROBLEM SOLVING (LKPD 2: STUDI KASUS PAK KARTO & REMAJA)
+             (Layout: Risk Management & Pie/Allocation Simulation like Reference Slides 7 & 8)
+             ====================================================================== -->
+        <section class="slide-view" data-slide="6" data-title="LKPD 2: Studi Kasus & Simulasi Uang Saku">
+            <div class="w-full h-full grid grid-cols-1 lg:grid-cols-12 items-center px-6 sm:px-12 lg:px-16 py-10 gap-7 relative z-20 overflow-y-auto slide-scroll">
+                
+                <!-- Left Column (6 Cols): Studi Kasus Pak Karto + Tabel Peluang vs Hambatan -->
+                <div class="lg:col-span-6 space-y-4">
+                    <div class="stagger-item delay-1">
+                        <span class="text-xs font-extrabold tracking-widest uppercase text-steel-600">KEGIATAN INTI 3 &bull; INQUIRY &amp; LKPD 2</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-navy-900 uppercase tracking-tight mt-1">
+                            DISKUSI KASUS &amp; HAMBATAN REMAJA
+                        </h2>
+                    </div>
+
+                    <!-- Case Study 1: Pak Karto (From Modul Ajar) -->
+                    <div class="stagger-item delay-2 bg-rose-50/70 border-2 border-rose-200 rounded-2xl p-4 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="bg-rose-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase">Studi Kasus LKPD 2 &bull; Pak Karto</span>
+                            <span class="text-xs font-bold text-rose-700">Diskusi Kelompok (20 Menit)</span>
+                        </div>
+                        <p class="text-xs text-slate-700 leading-relaxed">
+                            <strong>Kasus:</strong> Pak Karto adalah pengusaha sukses dengan tabungan miliaran rupiah, rumah megah, dan tanah luas. Namun ia sangat kikir (bakhil) dan enggan membantu warga sekitar yang kesulitan. Hingga wafat, seluruh hartanya habis dibagi kepada ahli waris tanpa ia bawa mati sedikit pun.
+                        </p>
+                        <button onclick="toggleCaseSolution()" class="text-xs font-bold text-navy-900 bg-white hover:bg-steel-100 border border-rose-300 px-3 py-1.5 rounded-xl flex items-center gap-1.5 transition">
+                            <i class="ph-bold ph-eye text-rose-600"></i>
+                            <span id="caseBtnText">Tampilkan Analisis Berdasarkan QS. Al-Baqarah: 254</span>
+                        </button>
+                        <div id="caseSolutionBox" class="hidden pt-2 border-t border-rose-200 text-xs text-navy-900 bg-white/80 p-2.5 rounded-xl">
+                            <strong>Analisis Ayat 254:</strong> Pak Karto merugi besar karena menunda infak hingga datang kematian (kiamat kecil). Di akhirat, miliaran rupiah miliknya tak lagi bisa dipakai menebus dosa (<em>laa bay'un fiihi</em>), sementara ia tetap harus mempertanggungjawabkan (hisab) setiap rupiah hartanya sendirian!
+                        </div>
+                    </div>
+
+                    <!-- Hambatan vs Solusi Remaja Berinfak (Ribbon style like Reference Slide 8) -->
+                    <div class="stagger-item delay-3 space-y-2.5">
+                        <p class="text-xs font-extrabold uppercase tracking-wider text-navy-900">Mengatasi Hambatan Infak Remaja MTs (Klik untuk Solusi):</p>
+                        
+                        <div onclick="cycleBarrierTip(0)" class="cursor-pointer flex items-center bg-steel-50 hover:bg-steel-100 border border-steel-200 rounded-2xl p-3 transition">
+                            <div class="w-11 h-11 bg-navy-900 text-white clip-hexagon flex items-center justify-center shrink-0 mr-3 font-bold text-xs">01</div>
+                            <div class="flex-1">
+                                <h4 class="text-xs font-extrabold text-navy-900">Hambatan: "Takut Uang Jajan Habis / Kurang"</h4>
+                                <p class="text-xs text-steel-700 mt-0.5"><strong>Solusi Cinta:</strong> Sisihkan Rp1.000 di awal pagi (Sedekah Subuh) sebelum jajan, bukan menunggu sisa uang jajan!</p>
+                            </div>
+                        </div>
+
+                        <div onclick="cycleBarrierTip(1)" class="cursor-pointer flex items-center bg-steel-50 hover:bg-steel-100 border border-steel-200 rounded-2xl p-3 transition">
+                            <div class="w-11 h-11 bg-steel-600 text-white clip-hexagon flex items-center justify-center shrink-0 mr-3 font-bold text-xs">02</div>
+                            <div class="flex-1">
+                                <h4 class="text-xs font-extrabold text-navy-900">Hambatan: "Malu Karena Nominalnya Kecil (Rp1.000)"</h4>
+                                <p class="text-xs text-steel-700 mt-0.5"><strong>Solusi Cinta:</strong> Allah tidak melihat besarnya nominal, melainkan keikhlasan dan keistiqamahan hati kita.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column (6 Cols): Interactive Calculator "Simulasi Alokasi Uang Saku Remaja Tawassuth" (Matching Slide 7 Reference) -->
+                <div class="lg:col-span-6 stagger-item delay-3 bg-gradient-to-br from-navy-900 to-navy-800 text-white rounded-3xl p-6 shadow-xl">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="px-3 py-1 rounded-full bg-white/15 text-[11px] font-bold uppercase tracking-wider text-steel-200">Simulasi Interaktif &bull; Nilai PPRA Tawassuth</span>
+                        <i class="ph-fill ph-calculator text-2xl text-steel-300"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-extrabold uppercase mb-1">Kalkulator Berkah Uang Saku Harian</h3>
+                    <p class="text-xs text-steel-200 mb-4">Geser slider untuk melihat dampak besar menyisihkan uang saku harianmu selama belajar di MTs!</p>
+
+                    <!-- Sliders -->
+                    <div class="space-y-4 bg-white/10 border border-white/15 rounded-2xl p-4 mb-4">
+                        <div>
+                            <div class="flex justify-between text-xs font-bold mb-1">
+                                <span class="text-steel-200">Uang Saku Harianmu:</span>
+                                <span id="allowanceVal" class="font-mono text-white text-sm">Rp 15.000</span>
+                            </div>
+                            <input id="allowanceSlider" type="range" min="5000" max="50000" step="1000" value="15000" oninput="updateInfaqCalculator()" class="w-full accent-steel-400 cursor-pointer">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-bold mb-1">
+                                <span class="text-steel-200">Komitmen Infak Harian (Celengan Kelas):</span>
+                                <span id="infaqVal" class="font-mono text-emerald-300 text-sm">Rp 2.000 (13%)</span>
+                            </div>
+                            <input id="infaqSlider" type="range" min="500" max="10000" step="500" value="2000" oninput="updateInfaqCalculator()" class="w-full accent-emerald-400 cursor-pointer">
+                        </div>
+                    </div>
+
+                    <!-- 6 Grid Cards Output (Matching the 2x3 Grid in Slide 7 "BUDGET ALLOCATION" Reference) -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                        <div class="bg-steel-600/40 border border-steel-400/30 p-3 rounded-xl">
+                            <p class="text-[10px] text-steel-200 uppercase font-semibold">Infak Sepekan (6 Hari)</p>
+                            <p id="calcWeekly" class="text-base font-extrabold font-mono text-white mt-0.5">Rp 12.000</p>
+                        </div>
+                        <div class="bg-steel-600/40 border border-steel-400/30 p-3 rounded-xl">
+                            <p class="text-[10px] text-steel-200 uppercase font-semibold">Infak Sebulan</p>
+                            <p id="calcMonthly" class="text-base font-extrabold font-mono text-white mt-0.5">Rp 52.000</p>
+                        </div>
+                        <div class="bg-emerald-500/25 border border-emerald-400/40 p-3 rounded-xl">
+                            <p class="text-[10px] text-emerald-200 uppercase font-semibold">Infak Setahun</p>
+                            <p id="calcYearly" class="text-base font-extrabold font-mono text-emerald-300 mt-0.5">Rp 624.000</p>
+                        </div>
+                        <div class="bg-white/10 border border-white/15 p-3 rounded-xl">
+                            <p class="text-[10px] text-steel-200 uppercase font-semibold">Sisa Jajan &amp; Tabungan</p>
+                            <p id="calcRemaining" class="text-base font-extrabold font-mono text-white mt-0.5">Rp 13.000/hr</p>
+                        </div>
+                        <div class="col-span-2 bg-amber-500/20 border border-amber-300/40 p-3 rounded-xl flex items-center justify-between">
+                            <div>
+                                <p class="text-[10px] text-amber-200 uppercase font-semibold">Jika 1 Kelas (32 Siswa) Kompak Setahun:</p>
+                                <p id="calcClassTotal" class="text-lg font-extrabold font-mono text-amber-300 mt-0.5">Rp 19.968.000 !</p>
+                            </div>
+                            <i class="ph-fill ph-sparkle text-3xl text-amber-300"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             SLIDE 8: KUIS INTERAKTIF EVALUASI FORMATIF & HOTS (5 SOAL)
+             ====================================================================== -->
+        <section class="slide-view" data-slide="7" data-title="Kuis Interaktif Pertemuan 2">
+            <div class="w-full h-full flex flex-col justify-between px-6 sm:px-12 lg:px-16 py-9 relative z-20 overflow-y-auto slide-scroll">
+                
+                <!-- Top Quiz Header & Progress -->
+                <div class="stagger-item delay-1 flex flex-wrap items-center justify-between gap-4 border-b border-steel-200 pb-4">
+                    <div>
+                        <span class="text-xs font-extrabold tracking-widest uppercase text-steel-600">ASESMEN FORMATIF &amp; HOTS &bull; PERTEMUAN KE-2</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-navy-900 uppercase tracking-tight mt-0.5">
+                            UJI PEMAHAMAN INTERAKTIF: QS. AL-BAQARAH [2]: 254
+                        </h2>
+                    </div>
+
+                    <!-- Score & Question Counter -->
+                    <div class="flex items-center gap-3">
+                        <div class="bg-steel-100 border border-steel-300 px-4 py-2 rounded-2xl text-xs font-bold text-navy-900">
+                            Soal: <span id="quizCurrentNum" class="font-mono text-steel-600">1</span> / 5
+                        </div>
+                        <div class="bg-navy-900 text-white px-4 py-2 rounded-2xl text-xs font-bold flex items-center gap-1.5 shadow">
+                            <i class="ph-fill ph-trophy text-amber-400 text-base"></i>
+                            <span>Skor: <span id="quizScoreDisplay" class="font-mono">0</span></span>
+                        </div>
+                        <button onclick="resetQuiz()" class="bg-steel-50 hover:bg-steel-200 text-navy-900 border border-steel-300 p-2 rounded-xl text-xs transition" title="Ulangi Kuis">
+                            <i class="ph-bold ph-arrow-counter-clockwise"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quiz Body Container -->
+                <div id="quizActiveArea" class="stagger-item delay-2 my-auto py-4 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                    
+                    <!-- Question Box (5 Cols) -->
+                    <div class="lg:col-span-5 bg-gradient-to-br from-navy-900 via-navy-800 to-steel-600 text-white rounded-3xl p-6 shadow-xl relative overflow-hidden">
+                        <span id="quizCategoryBadge" class="inline-block px-3 py-1 rounded-full bg-white/15 text-[11px] font-mono uppercase tracking-wider text-steel-200 mb-3">
+                            Mufradat &amp; Tafsir
+                        </span>
+                        <p id="quizArabicSnippet" class="font-arabic text-2xl sm:text-3xl text-amber-200 mb-3 leading-relaxed" dir="rtl">
+                            يَوْمٌ لَا بَيْعٌ فِيهِ وَلَا خُلَّةٌ
+                        </p>
+                        <h3 id="quizQuestionText" class="text-base sm:text-lg font-bold leading-snug">
+                            Memuat pertanyaan...
+                        </h3>
+                    </div>
+
+                    <!-- Options & Explanation Box (7 Cols) -->
+                    <div class="lg:col-span-7 space-y-3">
+                        <div id="quizOptionsContainer" class="grid grid-cols-1 gap-2.5">
+                            <!-- Options rendered dynamically via JS -->
+                        </div>
+
+                        <!-- Feedback Box -->
+                        <div id="quizFeedbackBox" class="hidden rounded-2xl p-4 border text-xs sm:text-sm leading-relaxed transition-all">
+                            <!-- Populated when an option is clicked -->
+                        </div>
+
+                        <!-- Next Question Button -->
+                        <div class="flex justify-end pt-1">
+                            <button id="nextQuizBtn" onclick="nextQuizQuestion()" class="hidden bg-navy-900 hover:bg-navy-800 text-white font-bold text-xs px-5 py-3 rounded-xl flex items-center gap-2 shadow-md transition">
+                                <span>Soal Berikutnya</span>
+                                <i class="ph-bold ph-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Quiz Final Result Screen (Hidden until finished) -->
+                <div id="quizResultArea" class="hidden my-auto py-8 text-center max-w-xl mx-auto space-y-4">
+                    <div class="w-20 h-20 rounded-3xl bg-navy-900 text-amber-400 flex items-center justify-center mx-auto shadow-xl">
+                        <i class="ph-fill ph-medal text-5xl"></i>
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-navy-900">Alhamdulillah, Kuis Selesai!</h3>
+                    <p id="quizFinalMessage" class="text-sm text-slate-600"></p>
+                    <div class="text-4xl font-extrabold text-steel-600 font-mono" id="quizFinalScoreText">100 / 100</div>
+                    <div class="flex justify-center gap-3 pt-2">
+                        <button onclick="resetQuiz()" class="bg-steel-100 hover:bg-steel-200 text-navy-900 font-bold text-xs px-5 py-3 rounded-xl transition">
+                            Ulangi Kuis
+                        </button>
+                        <button onclick="nextSlide()" class="bg-navy-900 hover:bg-navy-800 text-white font-bold text-xs px-6 py-3 rounded-xl shadow transition">
+                            Lanjut ke Kesimpulan &amp; Penutup
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             SLIDE 9: KEGIATAN PENUTUP, REFLEKSI CINTA & TANTANGAN SEDEKAH SUBUH
+             (Layout: Conclusion + Contact Us style from Reference Slides 9 & 10)
+             ====================================================================== -->
+        <section class="slide-view" data-slide="8" data-title="Penutup, Refleksi & Aksi Sepekan">
+            <div class="w-full h-full grid grid-cols-1 lg:grid-cols-12 items-center px-6 sm:px-12 lg:px-16 py-10 gap-8 relative z-20 overflow-y-auto slide-scroll">
+                
+                <!-- Left Column (6 Cols): Rangkuman & Tantangan Aksi Sepekan (Matching Slide 9 "CONCLUSION") -->
+                <div class="lg:col-span-6 space-y-5">
+                    <div class="stagger-item delay-1">
+                        <span class="text-xs font-extrabold tracking-widest uppercase text-steel-600">KEGIATAN PENUTUP &bull; REFLEKSI &amp; TINDAK LANJUT</span>
+                        <h2 class="text-2xl sm:text-4xl font-extrabold text-navy-900 uppercase tracking-tight mt-1">
+                            KESIMPULAN &amp; AKSI NYATA
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                            Ilmu Al-Qur'an Hadis belum sempurna sebelum menjelma menjadi akhlak mulia dan kebiasaan penuh cinta.
+                        </p>
+                    </div>
+
+                    <!-- Summary Checkmarks (Matching "Summary & Next Steps" in Slide 9 Reference) -->
+                    <div class="space-y-3">
+                        <div class="stagger-item delay-2 flex items-start gap-3.5 bg-steel-50 border border-steel-200 p-4 rounded-2xl">
+                            <div class="w-8 h-8 rounded-full bg-steel-600 text-white flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="ph-bold ph-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-extrabold text-navy-900 text-sm">Intisari QS. Al-Baqarah [2]: 254</h4>
+                                <p class="text-xs text-slate-600 mt-0.5">
+                                    Kezaliman terbesar adalah menahan hak rezeki Allah hingga ajal menjemput tanpa membawa bekal kebaikan menuju hari yang tiada jual beli, tiada koneksi, dan tiada syafaat tanpa izin-Nya.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="stagger-item delay-3 flex items-start gap-3.5 bg-emerald-50 border border-emerald-200 p-4 rounded-2xl">
+                            <div class="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="ph-fill ph-piggy-bank text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-extrabold text-navy-900 text-sm">Tantangan Aksi Sepekan: Celengan Sedekah Subuh / Harian</h4>
+                                <p class="text-xs text-slate-600 mt-0.5">
+                                    Mulai esok pagi, sisihkan minimal <strong>Rp500 – Rp2.000</strong> setiap hari ke dalam Celengan Sedekah Kelas VIII sebelum membeli jajanan.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="stagger-item delay-4 flex items-start gap-3.5 bg-steel-50 border border-steel-200 p-4 rounded-2xl">
+                            <div class="w-8 h-8 rounded-full bg-navy-900 text-white flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="ph-bold ph-arrow-Bend-up-right text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-extrabold text-navy-900 text-sm">Persiapan Pertemuan Ke-3 Pekan Depan</h4>
+                                <p class="text-xs text-slate-600 mt-0.5">
+                                    Bacalah di rumah <strong>QS. Al-Baqarah [2]: 261</strong> tentang keajaiban matematika sedekah: 1 butir benih tumbuh menjadi <strong>7 tangkai &amp; 700 bulir pahala!</strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column (6 Cols): Komitmen Siswa + Doa Kifaratul Majelis & Teacher Info (Matching Slide 10 Reference) -->
+                <div class="lg:col-span-6 stagger-item delay-3 space-y-4">
+                    
+                    <!-- Interactive Pledge Card -->
+                    <div class="bg-white border-2 border-steel-200 rounded-3xl p-6 shadow-lg relative overflow-hidden">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-rose-100 text-rose-700 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+                                <i class="ph-fill ph-heart text-rose-500"></i> Komitmen Cinta Kelas VIII
+                            </span>
+                            <span id="pledgeCountBadge" class="text-xs font-mono font-bold text-steel-600">0 Siswa Berkomitmen</span>
+                        </div>
+
+                        <h3 class="text-lg font-extrabold text-navy-900 mb-3">Ikrar Gerakan Sedekah Harian</h3>
+                        <p class="text-xs text-slate-600 mb-4">
+                            Klik tombol di bawah ini bersama-sama sebagai tanda kesiapan mengamalkan QS. Al-Baqarah [2]: 254 pekan ini:
+                        </p>
+
+                        <button onclick="addStudentPledge()" class="w-full bg-gradient-to-r from-navy-900 via-navy-800 to-steel-600 hover:from-navy-800 hover:to-steel-500 text-white font-bold py-3.5 px-5 rounded-2xl shadow-lg flex items-center justify-center gap-2 transition transform active:scale-95">
+                            <i class="ph-fill ph-hand-heart text-xl text-rose-300"></i>
+                            <span>"Saya Siap Berinfak Sebelum Terlambat!" (+1)</span>
+                        </button>
+
+                        <!-- Doa Penutup Majelis -->
+                        <div class="mt-5 pt-4 border-t border-steel-200 text-center">
+                            <p class="text-[11px] font-bold uppercase tracking-wider text-steel-600 mb-1">Doa Kifaratul Majelis</p>
+                            <p class="font-arabic text-xl sm:text-2xl text-navy-900 leading-relaxed" dir="rtl">
+                                سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ، أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا أَنْتَ، أَسْتَغْفِرُكَ وَأَتُوبُ إِلَيْكَ
+                            </p>
+                        </div>
+
+                        <!-- Contact / Repository Ribbons (Matching Slide 10 "CONTACT US" Chevron Bars) -->
+                        <div class="mt-4 space-y-2">
+                            <div class="flex items-center gap-3 bg-navy-900 text-white px-4 py-2 rounded-r-full clip-ribbon-right text-xs">
+                                <i class="ph-fill ph-user-circle text-steel-300 text-base"></i>
+                                <span class="font-semibold">Muhammad Azmi Huzaimi (NIM: 23110251) &bull; Guru Pamong: Ilham Syafaat</span>
+                            </div>
+                            <div class="flex items-center gap-3 bg-steel-600 text-white px-4 py-2 rounded-r-full clip-ribbon-right text-xs">
+                                <i class="ph-fill ph-buildings text-steel-200 text-base"></i>
+                                <span>MTs Al-Hidayah Bojongnangka &bull; Universitas Islam KH. Ruhiat Cipasung</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==========================================================================
+         BOTTOM NAVIGATION DOCK (Apple Glassmorphism Floating Controller)
+         ========================================================================== -->
+    <footer class="w-full max-w-[1440px] mx-auto mt-2 flex items-center justify-between px-2 z-30">
+        <!-- Left: Current Slide Title -->
+        <div class="hidden md:flex items-center gap-2 text-white/80 text-xs">
+            <span class="w-2 h-2 rounded-full bg-steel-400"></span>
+            <span id="currentSlideTitleFooter" class="font-medium">Sampul Pertemuan Ke-2</span>
+        </div>
+
+        <!-- Center: Apple Floating Pill Dock -->
+        <div class="apple-dock mx-auto px-3 py-1.5 rounded-full flex items-center gap-2 sm:gap-4">
+            <button onclick="prevSlide()" id="prevBtn" class="w-8 h-8 rounded-full bg-navy-900/10 hover:bg-navy-900 hover:text-white text-navy-900 flex items-center justify-center transition disabled:opacity-30">
+                <i class="ph-bold ph-caret-left"></i>
+            </button>
+
+            <!-- Slide Dots -->
+            <div id="slideDotsContainer" class="flex items-center gap-1.5 px-1">
+                <!-- Generated by JS -->
+            </div>
+
+            <span id="slideCounterBadge" class="text-xs font-mono font-bold text-navy-900 min-w-[42px] text-center">1 / 9</span>
+
+            <button onclick="nextSlide()" id="nextBtn" class="w-8 h-8 rounded-full bg-navy-900 hover:bg-steel-600 text-white flex items-center justify-center transition shadow">
+                <i class="ph-bold ph-caret-right"></i>
+            </button>
+        </div>
+
+        <!-- Right: Keyboard Hint -->
+        <div class="hidden md:flex items-center gap-1.5 text-white/60 text-[11px] font-mono">
+            <kbd class="px-1.5 py-0.5 bg-white/10 rounded border border-white/15">&larr;</kbd>
+            <kbd class="px-1.5 py-0.5 bg-white/10 rounded border border-white/15">&rarr;</kbd>
+            <span>Navigasi Slide</span>
+        </div>
+    </footer>
+
+    <!-- ==========================================================================
+         MODAL 1: POP-UP DETAIL KATA ARAB (MUFRADAT, GRAMATIKA, TAJWID & TAFSIR)
+         ========================================================================== -->
+    <div id="wordPopupModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-navy-950/70 backdrop-blur-md transition-opacity">
+        <div class="bg-white border-2 border-steel-300 rounded-3xl max-w-lg w-full p-6 shadow-2xl transform transition-all scale-100 relative overflow-hidden">
+            <!-- Top Geometric Ribbon -->
+            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-navy-900 via-steel-500 to-navy-900"></div>
+
+            <div class="flex items-start justify-between gap-4 mb-4">
+                <div>
+                    <span id="modalWordOrder" class="text-[11px] font-mono font-bold uppercase px-2.5 py-1 rounded-full bg-steel-100 text-steel-700">
+                        Kata Ke-1 dari 21 &bull; QS. Al-Baqarah: 254
+                    </span>
+                    <h3 id="modalWordMeaning" class="text-xl font-extrabold text-navy-900 mt-2">
+                        "Wahai" (Kata Seruan)
+                    </h3>
+                </div>
+                <button onclick="closeWordModal()" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-rose-100 hover:text-rose-600 text-slate-600 flex items-center justify-center transition">
+                    <i class="ph-bold ph-x text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Big Arabic Display -->
+            <div class="bg-gradient-to-br from-navy-900 to-steel-700 text-white rounded-2xl p-6 text-center mb-4 shadow-inner relative">
+                <p id="modalWordArabic" class="font-arabic text-5xl sm:text-6xl text-amber-200 mb-3" dir="rtl">يَا أَيُّهَا</p>
+                <p id="modalWordTranslit" class="text-sm font-mono uppercase tracking-widest text-steel-200 font-semibold">Yaa Ayyuhaa</p>
+            </div>
+
+            <!-- Details Grid -->
+            <div class="space-y-3 text-xs sm:text-sm">
+                <div class="bg-steel-50 border border-steel-200 p-3.5 rounded-2xl">
+                    <p class="text-[11px] font-bold uppercase tracking-wider text-steel-600 mb-1">
+                        <i class="ph-fill ph-Waveform mr-1"></i> Kaidah Bacaan Tajwid &amp; Gramatika (I'rab Ringkas):
+                    </p>
+                    <p id="modalWordTajwid" class="font-semibold text-navy-900"></p>
+                </div>
+
+                <div class="bg-amber-50/70 border border-amber-200 p-3.5 rounded-2xl">
+                    <p class="text-[11px] font-bold uppercase tracking-wider text-amber-800 mb-1">
+                        <i class="ph-fill ph-book-open-text mr-1"></i> Penjelasan Tafsir &amp; Kandungan Cinta:
+                    </p>
+                    <p id="modalWordExplanation" class="text-slate-700 leading-relaxed"></p>
+                </div>
+            </div>
+
+            <!-- Modal Navigation Buttons (Previous / Next Word) -->
+            <div class="mt-5 pt-4 border-t border-slate-200 flex items-center justify-between">
+                <button onclick="navigateWordModal(-1)" class="px-4 py-2 rounded-xl bg-steel-100 hover:bg-steel-200 text-navy-900 font-bold text-xs flex items-center gap-1.5 transition">
+                    <i class="ph-bold ph-arrow-right"></i>
+                    <span>Kata Sebelumnya</span>
+                </button>
+                <button onclick="closeWordModal()" class="px-5 py-2 rounded-xl bg-navy-900 hover:bg-navy-800 text-white font-bold text-xs transition">
+                    Tutup
+                </button>
+                <button onclick="navigateWordModal(1)" class="px-4 py-2 rounded-xl bg-steel-100 hover:bg-steel-200 text-navy-900 font-bold text-xs flex items-center gap-1.5 transition">
+                    <span>Kata Selanjutnya</span>
+                    <i class="ph-bold ph-arrow-left"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         MODAL 2: SLIDE OVERVIEW / NAVIGATOR (9 SLIDES)
+         ========================================================================== -->
+    <div id="overviewModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-navy-950/75 backdrop-blur-md">
+        <div class="bg-white rounded-3xl max-w-4xl w-full p-6 shadow-2xl border-2 border-steel-200 max-h-[85vh] flex flex-col">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+                <div>
+                    <span class="text-xs font-mono font-bold text-steel-600 uppercase">Peta Navigasi Pembelajaran</span>
+                    <h3 class="text-xl font-extrabold text-navy-900">Daftar Slide Pertemuan Ke-2 (QS. Al-Baqarah: 254)</h3>
+                </div>
+                <button onclick="toggleOverviewModal()" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center">
+                    <i class="ph-bold ph-x"></i>
+                </button>
+            </div>
+
+            <div id="overviewGrid" class="grid grid-cols-1 sm:grid-cols-3 gap-3 py-4 overflow-y-auto slide-scroll">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         MODAL 3: ASESMEN DIAGNOSTIK CEPAT (DARI MODUL AJAR)
+         ========================================================================== -->
+    <div id="diagnosticModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-navy-950/75 backdrop-blur-md">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl border-2 border-steel-200">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-200 mb-4">
+                <div>
+                    <span class="text-[11px] font-mono font-bold text-rose-600 uppercase">Asesmen Diagnostik Awal</span>
+                    <h3 class="text-lg font-extrabold text-navy-900">Polling Kesiapan Kelas VIII</h3>
+                </div>
+                <button onclick="closeDiagnosticModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center">
+                    <i class="ph-bold ph-x"></i>
+                </button>
+            </div>
+
+            <div class="space-y-3 text-xs sm:text-sm">
+                <div class="p-3 bg-steel-50 rounded-xl border border-steel-200 flex items-center justify-between gap-3">
+                    <span>1. Apakah kamu sudah terbiasa membaca Al-Qur'an rutin di rumah?</span>
+                    <input type="checkbox" class="w-5 h-5 accent-navy-900">
+                </div>
+                <div class="p-3 bg-steel-50 rounded-xl border border-steel-200 flex items-center justify-between gap-3">
+                    <span>2. Apakah kamu sudah tahu perbedaan zakat, infak, dan sedekah?</span>
+                    <input type="checkbox" class="w-5 h-5 accent-navy-900">
+                </div>
+                <div class="p-3 bg-steel-50 rounded-xl border border-steel-200 flex items-center justify-between gap-3">
+                    <span>3. Apakah kamu pernah menyisihkan uang saku untuk kotak amal madrasah?</span>
+                    <input type="checkbox" class="w-5 h-5 accent-navy-900">
+                </div>
+            </div>
+
+            <button onclick="closeDiagnosticModal()" class="mt-5 w-full bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 rounded-xl text-xs transition">
+                Simpan &amp; Lanjutkan Pembelajaran
+            </button>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         JAVASCRIPT ENGINE: WORD-BY-WORD QURAN DATA, MOTION, AUDIO & INTERACTIVITY
+         ========================================================================== -->
+    <script>
+        /* --------------------------------------------------------------------------
+           1. COMPLETE WORD-BY-WORD DATABASE OF QS. AL-BAQARAH [2]: 254 (21 WORDS)
+           Every single word in the verse is mapped with Arabic, Transliteration,
+           Meaning, Grammar/Tajwid, and Deep Pedagogical Explanation.
+           -------------------------------------------------------------------------- */
+        const quranWords254 = [
+            {
+                id: 1,
+                arabic: "يَا أَيُّهَا",
+                latin: "Yaa Ayyuhaa",
+                meaning: "Wahai",
+                tajwid: "Mad Jaiz Munfashil (dibaca panjang 4-5 harakat) & Harf Nida' (Kata Seruan)",
+                explanation: "Seruan penuh kasih sayang dari Allah Swt. Ibnu Mas'ud r.a. berkata: 'Apabila kamu mendengar Allah berfirman Yaa Ayyuhalladziina Aamanuu, maka pasanglah telingamu baik-baik, karena di dalamnya ada kebaikan yang diperintahkan atau keburukan yang dilarang.'"
+            },
+            {
+                id: 2,
+                arabic: "الَّذِينَ",
+                latin: "Alladziina",
+                meaning: "Orang-orang yang",
+                tajwid: "Alif Lam Syamsiyah & Mad Thabi'i (Isim Maushul / Kata Sambung)",
+                explanation: "Menunjukkan bahwa panggilan mulia ini ditujukan khusus kepada hamba-hamba pilihan yang memiliki ikatan janji keimanan dengan Allah Swt."
+            },
+            {
+                id: 3,
+                arabic: "آمَنُوا",
+                latin: "Aamanuu",
+                meaning: "Beriman",
+                tajwid: "Mad Badal pada huruf Hamzah (2 harakat) & Mad Thabi'i di akhir kata",
+                explanation: "Orang yang membenarkan Allah dan Rasul-Nya di dalam hati, mengikrarkan dengan lisan, dan membuktikannya dengan amal kedermawanan."
+            },
+            {
+                id: 4,
+                arabic: "أَنْفِقُوا",
+                latin: "Anfiquu",
+                meaning: "Infakkanlah!",
+                tajwid: "Ikhfa Haqiqi (Nun sukun bertemu Fa) & Mad Thabi'i | Fi'il Amr (Kata Perintah)",
+                explanation: "Kata kunci utama Pertemuan Ke-2! Berasal dari 'anfaqa-yunfiqu' yang artinya mengeluarkan sebagian harta untuk kebaikan. Perintah ini mencakup infak wajib (zakat/nafkah) maupun infak sunnah (sedekah)."
+            },
+            {
+                id: 5,
+                arabic: "مِمَّا",
+                latin: "Mimmaa",
+                meaning: "Sebagian dari apa yang",
+                tajwid: "Idgham Bighunnah (Min + Maa) dengan dengung 2 harakat & Mad Thabi'i",
+                explanation: "Kata 'Min' di sini bermakna 'sebagian' (lit-tab'idh). Artinya, Allah sangat bijaksana (Tawassuth): Allah tidak meminta kita menyerahkan seluruh harta, melainkan sebagian kecil saja sesuai kemampuan."
+            },
+            {
+                id: 6,
+                arabic: "رَزَقْنَاكُمْ",
+                latin: "Razaqnaakum",
+                meaning: "Telah Kami rezekikan kepadamu",
+                tajwid: "Qalqalah Sugra pada huruf Qaf (رَزَقْ) & Izhar Syafawi pada Mim sukun",
+                explanation: "Menyadarkan manusia bahwa uang saku, harta, dan jabatan kita sejatinya adalah pemberian Allah (Ar-Razzaq). Kita hanyalah pengelola amanah titipan-Nya."
+            },
+            {
+                id: 7,
+                arabic: "مِنْ",
+                latin: "Min",
+                meaning: "Dari",
+                tajwid: "Ikhfa Haqiqi (Nun sukun bertemu huruf Qaf pada kata berikutnya)",
+                explanation: "Huruf jar yang mengawali batas waktu (limitasi kesempatan) manusia dalam beramal saleh di dunia."
+            },
+            {
+                id: 8,
+                arabic: "قَبْلِ",
+                latin: "Qabli",
+                meaning: "Sebelum",
+                tajwid: "Qalqalah Sugra pada huruf Ba sukun (قَبْ) — dipantulkan ringan",
+                explanation: "Peringatan manajemen waktu! Jangan menunda sedekah sampai tua atau sampai kaya raya, sebab tidak ada yang tahu kapan batas waktunya habis."
+            },
+            {
+                id: 9,
+                arabic: "أَنْ",
+                latin: "An",
+                meaning: "Bahwa / Akan",
+                tajwid: "Idgham Bighunnah (Nun sukun bertemu huruf Ya pada kata Ya'tiya)",
+                explanation: "Kata penghubung (mashdariyah) yang menegaskan kepastian peristiwa besar yang akan segera datang."
+            },
+            {
+                id: 10,
+                arabic: "يَأْتِيَ",
+                latin: "Ya'tiya",
+                meaning: "Datang",
+                tajwid: "Hamzah sukun dibaca tegas (Nabrah) tanpa dipantulkan",
+                explanation: "Kedatangan hari berakhirnya kesempatan beramal, yakni saat kematian menjemput (kiamat sugra) dan saat hari kebangkitan (kiamat kubra)."
+            },
+            {
+                id: 11,
+                arabic: "يَوْمٌ",
+                latin: "Yaumun",
+                meaning: "Suatu Hari (Hari Kiamat)",
+                tajwid: "Mad Layyin (Wau sukun setelah fathah) & Idgham Bilaghunnah (Tanwin bertemu Lam)",
+                explanation: "Yang dimaksud adalah Hari Kiamat (Yaumul Qiyamah / Yaumul Hisab), hari perhitungan seluruh amal manusia."
+            },
+            {
+                id: 12,
+                arabic: "لَا",
+                latin: "Laa",
+                meaning: "Tidak ada",
+                tajwid: "Mad Thabi'i (2 harakat) — Laa Nafiyah lil Jinsi (Menafikan secara mutlak)",
+                explanation: "Penolakan mutlak: sama sekali tidak ada celah transaksi duniawi pada hari tersebut."
+            },
+            {
+                id: 13,
+                arabic: "بَيْعٌ",
+                latin: "Bay'un",
+                meaning: "Jual beli / Tebusan",
+                tajwid: "Huruf Layyin (Ya sukun setelah fathah) & Ikhfa Haqiqi (Tanwin bertemu Fa)",
+                explanation: "Terminologi Kunci 1: Di akhirat tidak ada lagi transaksi jual beli atau tebusan harta untuk membeli pahala maupun menebus diri dari siksa neraka."
+            },
+            {
+                id: 14,
+                arabic: "فِيهِ",
+                latin: "Fiihi",
+                meaning: "Di dalamnya (pada hari itu)",
+                tajwid: "Mad Thabi'i pada huruf Ya sukun (2 harakat)",
+                explanation: "Merujuk pada Hari Kiamat; seluruh pasar dan bursa dunia telah ditutup selamanya."
+            },
+            {
+                id: 15,
+                arabic: "وَلَا",
+                latin: "Wa laa",
+                meaning: "Dan tidak ada pula",
+                tajwid: "Mad Thabi'i (2 harakat)",
+                explanation: "Menambahkan perkara kedua yang sering diandalkan manusia di dunia namun gugur di akhirat."
+            },
+            {
+                id: 16,
+                arabic: "خُلَّةٌ",
+                latin: "Khullatun",
+                meaning: "Persahabatan akrab / Koneksi",
+                tajwid: "Tafkhim pada huruf Kha, Tasydid pada Lam, & Idgham Bighunnah (Tanwin bertemu Wau)",
+                explanation: "Terminologi Kunci 2: 'Khullah' adalah persahabatan yang sangat erat. Di hari kiamat, koneksi pejabat atau teman dekat tak bisa menyelamatkan, kecuali sahabat yang saling mencintai karena takwa (QS. Az-Zukhruf: 67)."
+            },
+            {
+                id: 17,
+                arabic: "وَلَا",
+                latin: "Wa laa",
+                meaning: "Dan tidak ada pula",
+                tajwid: "Mad Thabi'i (2 harakat)",
+                explanation: "Menambahkan perkara ketiga yang tidak berlaku tanpa izin Allah Swt."
+            },
+            {
+                id: 18,
+                arabic: "شَفَاعَةٌ ۗ",
+                latin: "Syafaa'atun",
+                meaning: "Syafaat (Pertolongan perantara)",
+                tajwid: "Mad Thabi'i & Tanda Waqaf Al-Waqfu Aula (Lebih utama berhenti sejenak)",
+                explanation: "Terminologi Kunci 3: Bagi orang kafir tidak ada syafaat sama sekali. Adapun bagi orang beriman yang gemar berinfak dan bertakwa, kelak mendapatkan syafaat Rasulullah Saw. atas izin Allah Swt."
+            },
+            {
+                id: 19,
+                arabic: "وَالْكَافِرُونَ",
+                latin: "Wal kaafiruuna",
+                meaning: "Dan orang-orang kafir (ingkar)",
+                tajwid: "Alif Lam Qamariyah, Mad Thabi'i pada Kaf dan Wau",
+                explanation: "Orang yang mengingkari kebenaran Allah, mengingkari hari kiamat, dan kufur nikmat dengan menahan hartanya dari jalan kebaikan."
+            },
+            {
+                id: 20,
+                arabic: "هُمُ",
+                latin: "Humu",
+                meaning: "Merekalah",
+                tajwid: "Dhamir Munfashil (Kata ganti penegas / pembatas makna)",
+                explanation: "Kata ganti yang berfungsi memberikan penekanan kuat (hashr) bahwa sifat zalim kembali kepada diri mereka sendiri."
+            },
+            {
+                id: 21,
+                arabic: "الظَّالِمُونَ",
+                latin: "Azh-Zhaalimuun",
+                meaning: "Orang-orang yang zalim",
+                tajwid: "Alif Lam Syamsiyah, Huruf Zha (Tafkhim/Tebal), & Mad 'Aridh Lissukun di akhir ayat",
+                explanation: "Kesimpulan Ayat: Mereka yang kikir dan enggan berinfak hingga wafat adalah orang yang menzalimi (merugikan) masa depan akhirat mereka sendiri."
+            }
+        ];
+
+        /* --------------------------------------------------------------------------
+           2. INTERACTIVE QUIZ QUESTIONS (5 HOTS & MUFRADAT QUESTIONS FOR MEETING 2)
+           -------------------------------------------------------------------------- */
+        const quizQuestions = [
+            {
+                category: "Mufradat & Makna Perkata",
+                arabic: "يَا أَيُّهَا الَّذِينَ آمَنُوا أَنْفِقُوا مِمَّا رَزَقْنَاكُمْ",
+                question: "Apakah arti yang tepat dari lafaz 'أَنْفِقُوا' (Anfiquu) dan 'مِمَّا رَزَقْنَاكُمْ' (Mimmaa razaqnaakum) pada awal QS. Al-Baqarah [2]: 254?",
+                options: [
+                    "Simpanlah seluruh harta yang kalian miliki untuk masa tua",
+                    "Infakkanlah sebagian dari rezeki yang telah Kami berikan kepadamu",
+                    "Jual belikanlah harta benda kalian agar mendapat keuntungan berlipat",
+                    "Berikanlah seluruh kekayaanmu tanpa menyisakan sedikit pun"
+                ],
+                correct: 1,
+                explanation: "Tepat sekali! 'Anfiquu' berarti infakkanlah/belanjakanlah di jalan kebaikan, dan 'Mimmaa razaqnaakum' berarti sebagian dari rezeki yang telah Kami (Allah) berikan kepadamu."
+            },
+            {
+                category: "Analisis Tafsir Akhirat",
+                arabic: "مِنْ قَبْلِ أَنْ يَأْتِيَ يَوْمٌ لَا بَيْعٌ فِيهِ وَلَا خُلَّةٌ وَلَا شَفَاعَةٌ",
+                question: "Dalam QS. Al-Baqarah [2]: 254, Allah memperingatkan datangnya hari kiamat di mana tiga hal duniawi tidak lagi berguna untuk menebus dosa. Manakah arti yang tepat dari 'لَا بَيْعٌ' (Laa bay'un) dan 'وَلَا خُلَّةٌ' (Walaa khullah)?",
+                options: [
+                    "Tidak ada pajak dan tidak ada pinjaman bunga",
+                    "Tidak ada jual beli (tebusan) dan tidak ada persahabatan akrab (koneksi)",
+                    "Tidak ada rasa lapar dan tidak ada rasa haus",
+                    "Tidak ada siang dan tidak ada malam"
+                ],
+                correct: 1,
+                explanation: "Benar! 'Laa bay'un' artinya tidak ada transaksi jual beli/tebusan dosa dengan emas atau harta, sedangkan 'Walaa khullah' artinya tidak ada perlindungan dari koneksi teman dekat."
+            },
+            {
+                category: "Studi Kasus HOTS (LKPD 2)",
+                arabic: "وَالْكَافِرُونَ هُمُ الظَّالِمُونَ",
+                question: "Pak Karto memiliki tabungan miliaran rupiah namun sangat kikir (bakhil) terhadap warga miskin hingga ia wafat. Mengapa sikap menahan harta dan enggan berinfak hingga mati dikategorikan sebagai perbuatan 'Zalim' dalam ayat ini?",
+                options: [
+                    "Karena ia membuat ahli warisnya menjadi terlalu kaya raya",
+                    "Karena ia menzalimi dirinya sendiri dengan datang ke akhirat tanpa bekal amal penyelamat",
+                    "Karena bank tempat ia menabung akan menyita hartanya",
+                    "Karena infak hanya diwajibkan bagi pengusaha yang bangkrut saja"
+                ],
+                correct: 1,
+                explanation: "Analisis HOTS yang sangat tepat! Seseorang yang kikir hingga wafat sejatinya menzalimi dirinya sendiri karena ia membiarkan dirinya menghadapi hisab harta di akhirat tanpa perisai pahala sedekah."
+            },
+            {
+                category: "Penerapan Remaja & PPRA Tawassuth",
+                arabic: "أَنْفِقُوا مِمَّا رَزَقْنَاكُمْ",
+                question: "Rafi adalah siswa kelas VIII MTs yang mendapat uang saku Rp15.000/hari. Ia sering ragu berinfak karena takut uang jajannya kurang. Bagaimana strategi paling bijak (Tawassuth) agar Rafi bisa rutin berinfak tanpa kelaparan di sekolah?",
+                options: [
+                    "Menunggu sampai lulus kuliah dan bekerja baru mulai belajar berinfak",
+                    "Menginfakkan seluruh Rp15.000 lalu berpuasa seharian penuh setiap hari",
+                    "Menyisihkan Rp1.000 - Rp2.000 di awal pagi untuk Celengan Kelas, lalu menggunakan sisanya dengan hemat",
+                    "Meminjam uang teman untuk dimasukkan ke kotak amal agar terlihat dermawan"
+                ],
+                correct: 2,
+                explanation: "Luar biasa! Nilai PPRA Tawassuth mengajarkan keseimbangan: tidak kikir dan tidak berlebihan. Menyisihkan Rp1.000-Rp2.000 di awal pagi melatih keistiqamahan tanpa mengganggu kebutuhan pokok sekolah."
+            },
+            {
+                category: "Kaidah Tajwid QS. Al-Baqarah: 254",
+                arabic: "أَنْفِقُوا مِمَّا رَزَقْنَاكُمْ مِنْ قَبْلِ",
+                question: "Perhatikan potongan lafaz 'أَنْفِقُوا' (Anfiquu) dan 'مِنْ قَبْلِ' (Min qabli). Hukum bacaan Nun Sukun (نْ) ketika bertemu huruf Fa (ف) dan huruf Qaf (ق) pada kedua lafaz tersebut adalah...",
+                options: [
+                    "Izhar Halqi (dibaca jelas tanpa dengung)",
+                    "Ikhfa Haqiqi (dibaca samar-samar disertai dengung 2 harakat)",
+                    "Iqlab (bunyi nun sukun diubah menjadi mim)",
+                    "Idgham Bilaghunnah (dilebur tanpa dengung)"
+                ],
+                correct: 1,
+                explanation: "Sempurna! Baik huruf Fa (ف) maupun huruf Qaf (ق) termasuk dalam 15 huruf Ikhfa Haqiqi. Cara membacanya adalah menyamarkan bunyi Nun Sukun menuju makhraj huruf di depannya disertai ghunnah (dengung)."
+            }
+        ];
+
+        /* --------------------------------------------------------------------------
+           3. STATE MANAGEMENT & AUDIO SYNTHESIS (TONE.JS)
+           -------------------------------------------------------------------------- */
+        let currentSlideIndex = 0;
+        const totalSlides = 9;
+        let showInlineTranslations = true;
+        let currentSelectedWordIndex = 3; // Default 'Anfiquu'
+        let sfxEnabled = true;
+        let synth = null;
+
+        // Class Timer State (60 minutes = 3600 seconds)
+        let timerSeconds = 3600;
+        let timerInterval = null;
+
+        // Quiz State
+        let currentQuizIndex = 0;
+        let quizScore = 0;
+        let quizAnswered = false;
+
+        // Student Pledge Counter
+        let studentPledgeCount = 12;
+
+        // Initialize Tone.js subtle UI sound effects safely
+        function playUISound(note = "C5", duration = "32n") {
+            if (!sfxEnabled) return;
+            try {
+                if (typeof Tone !== "undefined") {
+                    if (!synth) {
+                        synth = new Tone.PolySynth(Tone.Synth, {
+                            oscillator: { type: "sine" },
+                            envelope: { attack: 0.005, decay: 0.1, sustain: 0.01, release: 0.15 }
+                        }).toDestination();
+                        synth.volume.value = -14;
+                    }
+                    if (Tone.context.state !== "running") {
+                        Tone.start();
+                    }
+                    synth.triggerAttackRelease(note, duration);
+                }
+            } catch (e) {
+                // Ignore audio restriction errors gracefully
+            }
+        }
+
+        function playTickSound() {
+            playUISound("G5", "64n");
+        }
+
+        function toggleSFX() {
+            sfxEnabled = !sfxEnabled;
+            const icon = document.getElementById("sfxIcon");
+            const label = document.getElementById("sfxLabel");
+            if (sfxEnabled) {
+                icon.className = "ph-fill ph-speaker-high text-steel-300";
+                label.textContent = "SFX On";
+                playUISound("E5", "32n");
+            } else {
+                icon.className = "ph-fill ph-speaker-slash text-rose-400";
+                label.textContent = "SFX Off";
+            }
+        }
+
+        /* --------------------------------------------------------------------------
+           4. SLIDE NAVIGATION & APPLE MOTION CONTROLLER
+           -------------------------------------------------------------------------- */
+        function updateSlideDeck() {
+            const slides = document.querySelectorAll(".slide-view");
+            slides.forEach((slide, idx) => {
+                slide.classList.remove("active", "prev-slide");
+                if (idx === currentSlideIndex) {
+                    slide.classList.add("active");
+                } else if (idx < currentSlideIndex) {
+                    slide.classList.add("prev-slide");
+                }
+            });
+
+            // Update Footer Counter & Title
+            const activeSlideEl = slides[currentSlideIndex];
+            const slideTitle = activeSlideEl ? activeSlideEl.getAttribute("data-title") : "";
+            document.getElementById("currentSlideTitleFooter").textContent = `Slide ${currentSlideIndex + 1}: ${slideTitle}`;
+            document.getElementById("slideCounterBadge").textContent = `${currentSlideIndex + 1} / ${totalSlides}`;
+
+            // Update Dots
+            const dotsContainer = document.getElementById("slideDotsContainer");
+            dotsContainer.innerHTML = "";
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement("button");
+                dot.onClick = () => goToSlide(i);
+                dot.onclick = () => goToSlide(i);
+                dot.title = slides[i].getAttribute("data-title");
+                if (i === currentSlideIndex) {
+                    dot.className = "w-6 h-2 rounded-full bg-navy-900 transition-all duration-300";
+                } else {
+                    dot.className = "w-2 h-2 rounded-full bg-steel-300 hover:bg-steel-500 transition-all duration-300";
+                }
+                dotsContainer.appendChild(dot);
+            }
+
+            // Disable/Enable Prev/Next buttons
+            document.getElementById("prevBtn").disabled = currentSlideIndex === 0;
+        }
+
+        function nextSlide() {
+            if (currentSlideIndex < totalSlides - 1) {
+                currentSlideIndex++;
+                playUISound("D5", "32n");
+                updateSlideDeck();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlideIndex > 0) {
+                currentSlideIndex--;
+                playUISound("A4", "32n");
+                updateSlideDeck();
+            }
+        }
+
+        function goToSlide(index) {
+            if (index >= 0 && index < totalSlides) {
+                currentSlideIndex = index;
+                playUISound("C5", "32n");
+                updateSlideDeck();
+                // Close overview modal if open
+                document.getElementById("overviewModal").classList.add("hidden");
+                document.getElementById("overviewModal").classList.remove("flex");
+            }
+        }
+
+        /* --------------------------------------------------------------------------
+           5. INTERACTIVE ARABIC WORD-BY-WORD RENDERER & POPUP MODAL
+           -------------------------------------------------------------------------- */
+        function renderArabicWords() {
+            const container = document.getElementById("arabicVerseContainer");
+            container.innerHTML = "";
+
+            quranWords254.forEach((wordObj, idx) => {
+                const chip = document.createElement("button");
+                chip.type = "button";
+                chip.id = `word-chip-${idx}`;
+                chip.className = `arabic-word-chip group ${idx === currentSelectedWordIndex ? 'selected-word' : ''}`;
+                chip.onclick = () => selectArabicWord(idx, true);
+
+                chip.innerHTML = `
+                    <span class="word-num text-[9px] font-mono px-1.5 py-0.2 rounded-full bg-steel-200/80 text-navy-900 mb-1 transition">${wordObj.id}</span>
+                    <span class="font-arabic text-2xl sm:text-3xl md:text-4xl leading-normal px-1">${wordObj.arabic}</span>
+                    <span class="inline-word-trans text-[10px] sm:text-[11px] font-sans font-semibold mt-1 px-1.5 py-0.5 rounded bg-steel-100/80 text-navy-900 group-hover:bg-steel-600 group-hover:text-white transition ${showInlineTranslations ? 'block' : 'hidden'}" dir="ltr">
+                        ${wordObj.meaning}
+                    </span>
+                `;
+                container.appendChild(chip);
+            });
+        }
+
+        function selectArabicWord(index, openPopup = false) {
+            currentSelectedWordIndex = index;
+            const wordObj = quranWords254[index];
+            playUISound("E5", "32n");
+
+            // Update active state on chips
+            document.querySelectorAll(".arabic-word-chip").forEach((el, idx) => {
+                if (idx === index) {
+                    el.classList.add("selected-word");
+                } else {
+                    el.classList.remove("selected-word");
+                }
+            });
+
+            // Update bottom inspector bar
+            document.getElementById("inspectorArabicBadge").textContent = wordObj.arabic;
+            document.getElementById("inspectorLatin").textContent = `${wordObj.id}. ${wordObj.latin}`;
+            document.getElementById("inspectorTajwid").textContent = wordObj.tajwid;
+            document.getElementById("inspectorMeaning").textContent = `Artinya: "${wordObj.meaning}"`;
+            document.getElementById("inspectorExplain").textContent = wordObj.explanation;
+
+            // Open detailed pop-up modal if clicked directly
+            if (openPopup) {
+                openCurrentWordModal();
+            }
+        }
+
+        function openCurrentWordModal() {
+            const wordObj = quranWords254[currentSelectedWordIndex];
+            document.getElementById("modalWordOrder").textContent = `Kata Ke-${wordObj.id} dari ${quranWords254.length} • QS. Al-Baqarah [2]: 254`;
+            document.getElementById("modalWordMeaning").textContent = `"${wordObj.meaning}"`;
+            document.getElementById("modalWordArabic").textContent = wordObj.arabic;
+            document.getElementById("modalWordTranslit").textContent = wordObj.latin;
+            document.getElementById("modalWordTajwid").textContent = wordObj.tajwid;
+            document.getElementById("modalWordExplanation").textContent = wordObj.explanation;
+
+            const modal = document.getElementById("wordPopupModal");
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+        }
+
+        function closeWordModal() {
+            const modal = document.getElementById("wordPopupModal");
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+        }
+
+        function navigateWordModal(direction) {
+            let nextIdx = currentSelectedWordIndex + direction;
+            if (nextIdx < 0) nextIdx = quranWords254.length - 1;
+            if (nextIdx >= quranWords254.length) nextIdx = 0;
+            selectArabicWord(nextIdx, true);
+        }
+
+        function toggleInlineTranslation() {
+            showInlineTranslations = !showInlineTranslations;
+            const btnText = document.getElementById("toggleTransText");
+            btnText.textContent = showInlineTranslations ? "Sembunyikan Arti Bawah Kata" : "Tampilkan Arti Bawah Kata";
+            renderArabicWords();
+        }
+
+        // Guided Tour through words (Talaqqi / Drill Simulation)
+        let tourInterval = null;
+        function playVerseTour() {
+            const tourBtnText = document.getElementById("tourBtnText");
+            if (tourInterval) {
+                clearInterval(tourInterval);
+                tourInterval = null;
+                tourBtnText.textContent = "Simulasi Baca Perkata";
+                return;
+            }
+            let idx = 0;
+            tourBtnText.textContent = "Hentikan Simulasi";
+            selectArabicWord(idx, false);
+            tourInterval = setInterval(() => {
+                idx++;
+                if (idx >= quranWords254.length) {
+                    clearInterval(tourInterval);
+                    tourInterval = null;
+                    tourBtnText.textContent = "Simulasi Baca Perkata";
+                    return;
+                }
+                selectArabicWord(idx, false);
+            }, 1400);
+        }
+
+        /* --------------------------------------------------------------------------
+           6. SLIDE-SPECIFIC INTERACTIVE WIDGETS
+           -------------------------------------------------------------------------- */
+        // Slide 2: Asmaul Husna Interactive Selector
+        function showAsmaulInfo(latin, arabic, meaning, desc) {
+            playUISound("F5", "32n");
+            const box = document.getElementById("asmaulDetailBox");
+            box.innerHTML = `<strong class="text-white">${latin} (${arabic} — ${meaning}):</strong> ${desc}`;
+        }
+
+        // Slide 4: Concept Tabs (Infak vs Sedekah vs Zakat)
+        function switchConceptTab(tab) {
+            playUISound("D5", "32n");
+            const tabs = ['infak', 'sedekah', 'zakat'];
+            tabs.forEach(t => {
+                const btn = document.getElementById(`tabBtn-${t}`);
+                if (t === tab) {
+                    btn.className = "concept-tab-btn bg-navy-900 text-white font-bold text-xs py-2.5 rounded-lg transition shadow";
+                } else {
+                    btn.className = "concept-tab-btn text-navy-900 hover:bg-steel-100 font-bold text-xs py-2.5 rounded-lg transition";
+                }
+            });
+
+            const content = document.getElementById("conceptTabContent");
+            if (tab === 'infak') {
+                content.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-mono font-bold text-steel-600 uppercase">Akar Kata: Anfaqa - Yunfiqu (أَنْفَقَ - يُنْفِقُ)</span>
+                        <span class="bg-emerald-100 text-emerald-800 text-[11px] font-bold px-2.5 py-0.5 rounded-full">Fokus Materi Bab 2</span>
+                    </div>
+                    <h4 class="text-base font-extrabold text-navy-900">Pengertian Infak Secara Bahasa &amp; Syariat</h4>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        Secara bahasa bermakna <strong>membelanjakan atau membiayai</strong> suatu urusan. Secara istilah syariat adalah mengeluarkan sebagian harta benda (materi) untuk kepentingan kebaikan yang diperintahkan Allah Swt. di luar kewajiban zakat.
+                    </p>
+                    <div class="grid grid-cols-2 gap-2 pt-2 text-xs">
+                        <div class="bg-steel-50 p-2.5 rounded-lg border border-steel-200">
+                            <span class="font-bold text-navy-900 block">Tanpa Nishab &amp; Haul</span>
+                            <span class="text-slate-600">Bebas dikeluarkan kapan saja dan berapa saja sesuai kerelaan hati.</span>
+                        </div>
+                        <div class="bg-steel-50 p-2.5 rounded-lg border border-steel-200">
+                            <span class="font-bold text-navy-900 block">Wujud: Harta / Materi</span>
+                            <span class="text-slate-600">Berupa uang saku, makanan, perlengkapan sekolah, atau dana pembangunan.</span>
+                        </div>
+                    </div>
+                `;
+            } else if (tab === 'sedekah') {
+                content.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-mono font-bold text-steel-600 uppercase">Akar Kata: Shadaqa (صَدَقَ - صَدَقَةٌ) — Kejujuran Iman</span>
+                        <span class="bg-steel-100 text-navy-900 text-[11px] font-bold px-2.5 py-0.5 rounded-full">Cakupan Paling Luas</span>
+                    </div>
+                    <h4 class="text-base font-extrabold text-navy-900">Sedekah: Bukti Kejujuran Iman (Materi &amp; Non-Materi)</h4>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        Sedekah memiliki cakupan yang <strong>jauh lebih umum (a'am)</strong> dibanding infak. Setiap infak adalah sedekah, namun sedekah tidak harus berupa uang!
+                    </p>
+                    <div class="grid grid-cols-2 gap-2 pt-2 text-xs">
+                        <div class="bg-steel-50 p-2.5 rounded-lg border border-steel-200">
+                            <span class="font-bold text-navy-900 block">Sedekah Materi</span>
+                            <span class="text-slate-600">Traktir teman yatim, memberi makan fakir miskin, menyumbang kotak masjid.</span>
+                        </div>
+                        <div class="bg-steel-50 p-2.5 rounded-lg border border-steel-200">
+                            <span class="font-bold text-navy-900 block">Sedekah Non-Materi</span>
+                            <span class="text-slate-600">Senyum tulus kepada saudara, mengajarkan ilmu, membantu piket, menyingkirkan duri di jalan.</span>
+                        </div>
+                    </div>
+                `;
+            } else {
+                content.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-mono font-bold text-steel-600 uppercase">Rukun Islam Ke-3 &bull; Wajib Ain</span>
+                        <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-0.5 rounded-full">Ada Nishab &amp; Haul</span>
+                    </div>
+                    <h4 class="text-base font-extrabold text-navy-900">Perbedaan Mendasar Infak dengan Zakat</h4>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        Berbeda dengan infak sunnah yang fleksibel, <strong>Zakat (Zakat Fitrah &amp; Zakat Mal)</strong> hukumnya wajib dengan aturan ketat:
+                    </p>
+                    <div class="grid grid-cols-2 gap-2 pt-2 text-xs">
+                        <div class="bg-steel-50 p-2.5 rounded-lg border border-steel-200">
+                            <span class="font-bold text-navy-900 block">Ditentukan Nishab &amp; Kadar</span>
+                            <span class="text-slate-600">Contoh Zakat Mal emas: wajib mencapai batas minimal 85 gram emas dan disimpan 1 tahun (haul) sebesar 2,5%.</span>
+                        </div>
+                        <div class="bg-steel-50 p-2.5 rounded-lg border border-steel-200">
+                            <span class="font-bold text-navy-900 block">Penerima Khusus (8 Asnaf)</span>
+                            <span class="text-slate-600">Zakat hanya boleh disalurkan kepada 8 golongan mustahik (QS. At-Taubah: 60).</span>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // Slide 6: Highlight Tafsir Detail
+        function showTafsirDetail(idx) {
+            playUISound("G5", "32n");
+            const box = document.getElementById("tafsirHighlightBox");
+            const details = [
+                {
+                    title: "Tafsir 'Laa Bay'un Fiihi' (Tiada Jual Beli):",
+                    arabic: "لَا بَيْعٌ فِيهِ",
+                    desc: "Imam Ibnu Katsir menjelaskan: Di akhirat, seseorang tidak bisa lagi membeli amal saleh yang dulu ia tinggalkan, dan tidak bisa menebus dirinya dari azab meski menyerahkan emas sepenuh bumi (QS. Ali Imran: 91). Satu-satunya 'pembelian' adalah berinfak selagi masih hidup di dunia!"
+                },
+                {
+                    title: "Tafsir 'Walaa Khullah' (Tiada Persahabatan / Koneksi):",
+                    arabic: "وَلَا خُلَّةٌ",
+                    desc: "Di dunia, seseorang sering lolos dari masalah karena punya kenalan pejabat atau sahabat dekat. Di akhirat, seluruh ikatan pertemanan yang dibangun atas dasar kemaksiatan atau kepentingan dunia akan saling bermusuhan, kecuali sahabat yang saling mengajak bertakwa & bersedekah."
+                },
+                {
+                    title: "Tafsir 'Walaa Syafa'ah' (Tiada Syafaat Tanpa Izin Allah):",
+                    arabic: "وَلَا شَفَاعَةٌ",
+                    desc: "Orang-orang kafir dan munafik yang kikir tidak mendapatkan syafaat siapa pun. Namun bagi seorang mukmin yang beriman dan gemar bersedekah dengan ikhlas, naungan sedekahnya dan syafaat Rasulullah Saw. akan menolongnya atas izin Allah Swt."
+                }
+            ];
+            const item = details[idx];
+            box.innerHTML = `
+                <div class="flex items-center justify-between mb-1">
+                    <span class="text-xs font-bold text-amber-300 uppercase">${item.title}</span>
+                    <span class="font-arabic text-xl text-steel-200">${item.arabic}</span>
+                </div>
+                <p class="text-xs text-slate-200 leading-relaxed">${item.desc}</p>
+            `;
+        }
+
+        // Slide 7: Toggle Case Solution & Infaq Calculator
+        function toggleCaseSolution() {
+            playUISound("E5", "32n");
+            const box = document.getElementById("caseSolutionBox");
+            const btnText = document.getElementById("caseBtnText");
+            if (box.classList.contains("hidden")) {
+                box.classList.remove("hidden");
+                btnText.textContent = "Sembunyikan Analisis";
+            } else {
+                box.classList.add("hidden");
+                btnText.textContent = "Tampilkan Analisis Berdasarkan QS. Al-Baqarah: 254";
+            }
+        }
+
+        function formatIDR(num) {
+            return "Rp " + num.toLocaleString("id-ID");
+        }
+
+        function updateInfaqCalculator() {
+            const allowance = parseInt(document.getElementById("allowanceSlider").value, 10);
+            let infaq = parseInt(document.getElementById("infaqSlider").value, 10);
+            if (infaq > allowance) {
+                infaq = allowance;
+                document.getElementById("infaqSlider").value = infaq;
+            }
+
+            const pct = Math.round((infaq / allowance) * 100);
+            const weekly = infaq * 6; // 6 hari sekolah MTs
+            const monthly = weekly * 4;
+            const yearly = weekly * 52;
+            const remaining = allowance - infaq;
+            const classTotal = yearly * 32; // 32 siswa
+
+            document.getElementById("allowanceVal").textContent = formatIDR(allowance);
+            document.getElementById("infaqVal").textContent = `${formatIDR(infaq)} (${pct}%)`;
+            document.getElementById("calcWeekly").textContent = formatIDR(weekly);
+            document.getElementById("calcMonthly").textContent = formatIDR(monthly);
+            document.getElementById("calcYearly").textContent = formatIDR(yearly);
+            document.getElementById("calcRemaining").textContent = `${formatIDR(remaining)}/hr`;
+            document.getElementById("calcClassTotal").textContent = `${formatIDR(classTotal)} !`;
+        }
+
+        /* --------------------------------------------------------------------------
+           7. INTERACTIVE QUIZ ENGINE (SLIDE 8)
+           -------------------------------------------------------------------------- */
+        function renderQuizQuestion() {
+            quizAnswered = false;
+            const q = quizQuestions[currentQuizIndex];
+
+            document.getElementById("quizCurrentNum").textContent = currentQuizIndex + 1;
+            document.getElementById("quizCategoryBadge").textContent = q.category;
+            document.getElementById("quizArabicSnippet").textContent = q.arabic;
+            document.getElementById("quizQuestionText").textContent = q.question;
+
+            const feedbackBox = document.getElementById("quizFeedbackBox");
+            feedbackBox.classList.add("hidden");
+            document.getElementById("nextQuizBtn").classList.add("hidden");
+
+            const optionsContainer = document.getElementById("quizOptionsContainer");
+            optionsContainer.innerHTML = "";
+
+            const letters = ["A", "B", "C", "D"];
+            q.options.forEach((optText, idx) => {
+                const btn = document.createElement("button");
+                btn.id = `quiz-opt-${idx}`;
+                btn.className = "w-full text-left p-3.5 rounded-2xl border-2 border-steel-200 bg-steel-50/70 hover:bg-white hover:border-steel-500 transition flex items-center gap-3 text-xs sm:text-sm font-semibold text-navy-900";
+                btn.onclick = () => selectQuizAnswer(idx);
+                btn.innerHTML = `
+                    <span class="w-8 h-8 rounded-xl bg-navy-900 text-white font-mono font-bold flex items-center justify-center shrink-0">${letters[idx]}</span>
+                    <span>${optText}</span>
+                `;
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function selectQuizAnswer(selectedIndex) {
+            if (quizAnswered) return;
+            quizAnswered = true;
+
+            const q = quizQuestions[currentQuizIndex];
+            const isCorrect = selectedIndex === q.correct;
+
+            if (isCorrect) {
+                quizScore += 20;
+                playUISound("G5", "16n");
+            } else {
+                playUISound("C4", "8n");
+            }
+
+            document.getElementById("quizScoreDisplay").textContent = quizScore;
+
+            // Highlight buttons
+            q.options.forEach((_, idx) => {
+                const btn = document.getElementById(`quiz-opt-${idx}`);
+                if (idx === q.correct) {
+                    btn.className = "w-full text-left p-3.5 rounded-2xl border-2 border-emerald-500 bg-emerald-50 text-emerald-950 flex items-center gap-3 text-xs sm:text-sm font-bold shadow-sm";
+                } else if (idx === selectedIndex && !isCorrect) {
+                    btn.className = "w-full text-left p-3.5 rounded-2xl border-2 border-rose-400 bg-rose-50 text-rose-900 flex items-center gap-3 text-xs sm:text-sm font-semibold opacity-90";
+                } else {
+                    btn.className = "w-full text-left p-3.5 rounded-2xl border border-slate-200 bg-slate-50 text-slate-400 flex items-center gap-3 text-xs sm:text-sm opacity-60";
+                }
+            });
+
+            // Show feedback
+            const feedbackBox = document.getElementById("quizFeedbackBox");
+            feedbackBox.classList.remove("hidden");
+            if (isCorrect) {
+                feedbackBox.className = "rounded-2xl p-3.5 border border-emerald-300 bg-emerald-50 text-emerald-900 text-xs leading-relaxed";
+                feedbackBox.innerHTML = `<strong class="block text-emerald-700 mb-0.5"><i class="ph-fill ph-check-circle mr-1"></i> MasyaAllah, Jawabanmu Benar! (+20 Poin)</strong> ${q.explanation}`;
+            } else {
+                feedbackBox.className = "rounded-2xl p-3.5 border border-rose-300 bg-rose-50 text-rose-900 text-xs leading-relaxed";
+                feedbackBox.innerHTML = `<strong class="block text-rose-700 mb-0.5"><i class="ph-fill ph-info mr-1"></i> Belum Tepat. Mari Kita Pelajari:</strong> ${q.explanation}`;
+            }
+
+            const nextBtn = document.getElementById("nextQuizBtn");
+            nextBtn.classList.remove("hidden");
+            nextBtn.querySelector("span").textContent = currentQuizIndex === quizQuestions.length - 1 ? "Lihat Hasil Akhir" : "Soal Berikutnya";
+        }
+
+        function nextQuizQuestion() {
+            if (currentQuizIndex < quizQuestions.length - 1) {
+                currentQuizIndex++;
+                renderQuizQuestion();
+            } else {
+                // Show final screen
+                document.getElementById("quizActiveArea").classList.add("hidden");
+                const resultArea = document.getElementById("quizResultArea");
+                resultArea.classList.remove("hidden");
+                document.getElementById("quizFinalScoreText").textContent = `${quizScore} / 100`;
+
+                let msg = "";
+                if (quizScore >= 80) {
+                    msg = "Luar biasa! Kamu telah menguasai mufradat, tajwid, dan kandungan QS. Al-Baqarah [2]: 254 dengan sangat baik (Kriteria Sangat Baik / Pengayaan).";
+                } else if (quizScore >= 60) {
+                    msg = "Alhamdulillah, pemahamanmu sudah baik! Mari terus latih hafalan mufradat dan biasakan infak harian.";
+                } else {
+                    msg = "Tetap semangat! Mari kita ulas kembali kosakata perkata pada Slide 5 bersama tutor sebaya.";
+                }
+                document.getElementById("quizFinalMessage").textContent = msg;
+            }
+        }
+
+        function resetQuiz() {
+            currentQuizIndex = 0;
+            quizScore = 0;
+            document.getElementById("quizScoreDisplay").textContent = "0";
+            document.getElementById("quizResultArea").classList.add("hidden");
+            document.getElementById("quizActiveArea").classList.remove("hidden");
+            renderQuizQuestion();
+        }
+
+        /* --------------------------------------------------------------------------
+           8. TEACHER UTILITIES: TIMER, PLEDGE, OVERVIEW MODAL & KEYBOARD SHORTCUTS
+           -------------------------------------------------------------------------- */
+        function addStudentPledge() {
+            studentPledgeCount++;
+            playUISound("A5", "16n");
+            document.getElementById("pledgeCountBadge").textContent = `${studentPledgeCount} Siswa Berkomitmen`;
+        }
+
+        function toggleClassTimer() {
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+                return;
+            }
+            playUISound("C5", "32n");
+            timerInterval = setInterval(() => {
+                if (timerSeconds > 0) {
+                    timerSeconds--;
+                    const mins = String(Math.floor(timerSeconds / 60)).padStart(2, "0");
+                    const secs = String(timerSeconds % 60).padStart(2, "0");
+                    document.getElementById("classTimerDisplay").textContent = `${mins}:${secs}`;
+                } else {
+                    clearInterval(timerInterval);
+                }
+            }, 1000);
+        }
+
+        function toggleOverviewModal() {
+            const modal = document.getElementById("overviewModal");
+            if (modal.classList.contains("hidden")) {
+                const grid = document.getElementById("overviewGrid");
+                grid.innerHTML = "";
+                const slides = document.querySelectorAll(".slide-view");
+                slides.forEach((s, idx) => {
+                    const title = s.getAttribute("data-title");
+                    const card = document.createElement("button");
+                    card.onclick = () => goToSlide(idx);
+                    card.className = `p-4 rounded-2xl border-2 text-left transition flex flex-col justify-between ${idx === currentSlideIndex ? 'border-navy-900 bg-navy-900 text-white' : 'border-steel-200 bg-steel-50 hover:bg-white text-navy-900'}`;
+                    card.innerHTML = `
+                        <span class="text-[11px] font-mono font-bold uppercase ${idx === currentSlideIndex ? 'text-steel-300' : 'text-steel-600'}">Slide 0${idx + 1}</span>
+                        <h4 class="font-extrabold text-sm mt-1">${title}</h4>
+                    `;
+                    grid.appendChild(card);
+                });
+                modal.classList.remove("hidden");
+                modal.classList.add("flex");
+            } else {
+                modal.classList.add("hidden");
+                modal.classList.remove("flex");
+            }
+        }
+
+        function openDiagnosticModal() {
+            const m = document.getElementById("diagnosticModal");
+            m.classList.remove("hidden");
+            m.classList.add("flex");
+        }
+
+        function closeDiagnosticModal() {
+            const m = document.getElementById("diagnosticModal");
+            m.classList.add("hidden");
+            m.classList.remove("flex");
+        }
+
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(() => {});
+            } else {
+                document.exitFullscreen().catch(() => {});
+            }
+        }
+
+        // Keyboard Navigation (Left/Right Arrows, Escape to close modals)
+        window.addEventListener("keydown", (e) => {
+            const wordModalOpen = !document.getElementById("wordPopupModal").classList.contains("hidden");
+            const overviewOpen = !document.getElementById("overviewModal").classList.contains("hidden");
+
+            if (e.key === "Escape") {
+                closeWordModal();
+                closeDiagnosticModal();
+                if (overviewOpen) toggleOverviewModal();
+                return;
+            }
+
+            if (wordModalOpen) {
+                if (e.key === "ArrowLeft") navigateWordModal(1); // RTL Arabic
+                if (e.key === "ArrowRight") navigateWordModal(-1);
+                return;
+            }
+
+            if (!overviewOpen) {
+                if (e.key === "ArrowRight" || e.key === "PageDown") {
+                    nextSlide();
+                } else if (e.key === "ArrowLeft" || e.key === "PageUp") {
+                    prevSlide();
+                }
+            }
+        });
+
+        // Initialize Everything on Window Load
+        window.onload = function () {
+            renderArabicWords();
+            updateInfaqCalculator();
+            renderQuizQuestion();
+            updateSlideDeck();
+        };
+    </script>
+</body>
+</html>
